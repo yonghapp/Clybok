@@ -73,8 +73,11 @@ body{
 .Imput span{
 	width:12vw;
 	height:4.5vh;
+	position:relative;
+	top:0;
+	bottom:0;
+	margin:auto;
 	display: block;
-	font-size:3vh;
 	font-weight:100;
 	line-height:4.5vh;
 	color:#fff;
@@ -141,26 +144,26 @@ body{
 	margin-top:0.8vh;
 	padding:1.1vh 0;
 	background: #fff;
+	overflow: hidden;
 	
 }
 .hot_bk .h_t{
 	width:94vw;
-	height:2.8vh;
+	height:3vh;
 	padding:0 3vw;
 	line-height:2.8vh;
 }
 .hot_tt{
-	height:2.8vh;
-	line-height:2.8vh;
+	height:3vh;
+	line-height:3vh;
 	display:inline-block;
-	font-size:1.9vh;
 	color:#f64f5e;
 	margin-left: 5vw;
 	position:relative;
 }
 .hot_tt i{
-	width:2.6vh;
-	height:2.6vh;
+	width:2.8vh;
+	height:2.8vh;
 	display:inline-block;
 	position:absolute;
 	top:0;
@@ -192,41 +195,22 @@ body{
 .hot_more{
 	display:block;
 	float:right;
-	font-size:1.6vh;
 	color:#7b7b7b;
 }
 .hot_b2,.wrapper {
 	position: relative;
 	z-index: 1;
-	height: 21.1vh;
-	margin-top:2vh;
 	width: 100%;
+	// height: 21.1vh;
+	margin-top:2vh;
+	
 	overflow: hidden;
 	-ms-touch-action: none;
 }
 
 .scrol2,.scroller1 {
-	position: absolute;
-	z-index: 1;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	height: 21.2vh;
-	// width:100%;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	-o-text-size-adjust: none;
-	text-size-adjust: none;
-	white-space:nowrap;
+		width:100%;
+		overflow:hidden;
 }
 
 .scrol2 ul,.scroller1 ul {
@@ -239,12 +223,12 @@ body{
 
 .scrol2 li,.scroller1 li {
 	width: 33.3vw;
-	height:21.2vh;
+	// height:45.3vw;
 	float: left;
 }
 .book_pic{
 	width:26vw;
-	height:17.9vh;
+
 	border-radius:2vw;
 	overflow:hidden;
 	margin:0 auto;
@@ -255,19 +239,20 @@ body{
 }
 .wrapper .scroller1 .book_tit,
 .hot_b2 .scrol2 .book_tit{
-	height:3.2vh;
+	// height:3.2vh;
 	width:26vw;
 	margin:0 auto;
 	line-height:3.2vh;
 	text-align:center;
-	font-size:2.4vw;
 	color:#666;
+	white-space:nowrap;
 	overflow:hidden;
 }
 
 .foot{
 	width:100%;
 	height:7.1vh;
+	padding-top: 1.5vh;
 	background: #fff;
 	margin-top:7.1vh;
 	border-top:1px solid #bbbbbb;
@@ -294,8 +279,12 @@ body{
 	width:100%;
 	display:block;
 	text-align:center;
-	font-size:1.6vh;
 	color:#666;
+	position:relative;
+	left:0;
+	right:0;
+	bottom:-3px;
+	margin:auto;
 }
 .foot ul li:nth-child(1) p{
 	color:#f64f5e;
