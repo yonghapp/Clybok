@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>朝阳图书馆</title>
+	<meta content="">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/ind1.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+
+
+
+
+	<script type="text/javascript">
+
+	var myScroll;
+
+
+
+	function loaded () {
+		myScroll = new IScroll('#wrapper', { eventPassthrough: true, scrollX: true, scrollY: false, preventDefault: false });
+	
+	}
+
+	
+	</script>
+</head>
+<body onload="loaded()">
+	<div class="top">
+		<div class="t_bg" id="wrapper">
+			<div id="scroller">
+				<ul>
+					<li>
+						<img src="images/bg1.png" alt="">
+					</li>
+					<li>
+						<img src="images/bg2.png" alt="">
+					</li>
+					<li>
+						<img src="images/bg3.png" alt="">
+					</li>
+					<li>
+						<img src="images/bg4.png" alt="">
+					</li>	
+					<li>
+						<img src="images/bg5.png" alt="">
+					</li>	
+					<li>
+						<img src="images/bg6.png" alt="">
+					</li>									
+				</ul>
+			</div>
+		</div>
+		<div class="Imput">
+			<span><i class="fa fa-search" class="I_l"></i></span>
+			<input type="text" value="我的前半生" id="input">
+			<span><i class="fa fa-camera-retro" class="I_r"></i></span>
+		</div>
+	</div>
+
+	<div class="nav">
+		<div class="con">
+			<span><img src="images/1.png" alt=""></span>
+			<p>图书分类</p>
+		</div>
+		<div class="con">
+			<span><img src="images/2.png" alt=""></span>
+			<p>服务中心</p>
+		</div>
+		<div class="con">
+		    <span><img src="images/3.png" alt=""></span>
+			<p>新闻资讯</p>
+		</div>
+		<div class="con">
+			<span><img src="images/4.png" alt=""></span>
+			<p>讲座活动</p>
+		</div>
+	</div>
+
+	<div class="bk_con">	
+		<div class="hot_bk">
+			<p class="h_t">
+				<span class="hot_tt"><i></i>热门推荐</span>
+				<span class="hot_more">更多 <i class="fa fa-angle-right"></i></span>
+			</p>
+			<div class="wrapper">
+				<div class="scroller1">
+					<ul>
+						<li v-for="Hot in Hots">
+							<div class="book_pic"><img v-bind:src="Hot.icon" alt=""></div>
+							<p class="book_tit">{{Hot.title}}</p>
+						</li>									
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="hot_bk new_bk">
+			<p class="h_t">
+				<span class="hot_tt new_tt"><i></i>新书推荐</span>
+				<span class="hot_more">更多 <i class="fa fa-angle-right"></i></span>
+			</p>
+			<div id="hot_b2" class="hot_b2">
+				<div id="scrol2" class="scrol2">
+					<ul>
+						<li v-for="New in News">
+							<div class="book_pic"><img v-bind:src="New.icon" alt=""></div>
+							<p class="book_tit">{{New.title}}</p>
+						</li>									
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="hot_bk read_bk">
+			<p class="h_t">
+				<span class="hot_tt read_tt"><i></i>读者推荐</span>
+				<span class="hot_more">更多 <i class="fa fa-angle-right"></i></span>
+			</p>
+			<div id="hot_b2" class="hot_b2">
+				<div id="scrol2" class="scrol2">
+					<ul>
+						<li v-for="Read in Reads">
+							<div class="book_pic"><img v-bind:src="Read.icon" alt=""></div>
+							<p class="book_tit">{{Read.title}}</p>
+						</li>									
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="foot">
+		<ul>
+			<li>
+				<div><i></i></div>
+				<p>首页</p>
+			</li>
+			<li>
+				<div><i></i></div>
+				<p>消息</p>
+			</li>
+			<li>
+				<div><i></i></div>
+				<p>馆藏查询</p>
+			</li>
+			<li>
+				<div><i></i></div>
+				<p>书车</p>
+			</li>
+			<li>
+				<div><i></i></div>
+				<p>我的</p>
+			</li>
+		</ul>
+
+	</div>
+
+
+
+
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+
+		var oInput=document.getElementById("input");
+		Element.prototype.holder=function(){
+			var thisVal=this.value;
+			this.onfocus=function (){
+				if(this.value==thisVal){
+					this.value="";
+				}
+			}
+			this.onblur=function (){
+				if(this.value==""){
+					this.value=thisVal;
+				}
+			}
+		}
+		oInput.holder();
+
+
+		$(function(){
+			var con_len=$("#scroller").find("li");
+			var con_len1=$(".scroller1").find("li");
+			var con_len2=$(".scrol2").find("li");
+
+
+			var W=$(window).width();
+				$("#scroller").css({
+					"width":con_len.length*(con_len.width())
+			   
+
+				});
+				$(".scroller1").css({
+					"width":con_len.length*(con_len.width())
+			   
+
+				});
+					$(".scrol2").css({
+					"width":con_len.length*(con_len.width())
+			   
+
+				})
+				  
+		})
+	
+	</script>
+	<script type="text/javascript">
+	let data={
+		Hots:[
+				 {
+			        title:"别走，我的青春年少",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5717746.jpg',
+			      },
+			      {
+			        title:"首都周围的八大集团军",
+			        icon:'http://103.235.234.147:6788/bookimg/I253.2614.jpg',
+			      },
+			      {
+			        title:"那个夏季那个秋天",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5715906.jpg',
+			      },
+			      {
+			        title:"蔷薇盛开过夏天",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5716289.jpg',
+			      },
+			      {
+			        title:"奇特的一生∶柳比歇夫坚持56年的“时间统计法”",
+			        icon:'http://103.235.234.147:6788/bookimg/B848.44495.jpg',
+			      },
+			      {
+			        title:"飞越地平线”",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.52868.jpg',
+			      },
+			],
+
+			News:[
+				 {
+			        title:"会带人，才有高效团队",
+			        icon:'http://103.235.234.147:6788/bookimg/F272.9303.jpg',
+			      },
+			      
+			      {
+			        title:"一个人的天光",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5716790.jpg',
+			      },
+			      {
+			        title:"偏爱",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5717698.jpg',
+			      },
+			      {
+			        title:"奇特的一生∶柳比歇夫坚持56年的“时间统计法”",
+			        icon:'http://103.235.234.147:6788/bookimg/B848.44495.jpg',
+			      },
+			      {
+			        title:"一个海外华人讲的中国人的故事”",
+			        icon:'http://103.235.234.147:6788/bookimg/K2094316.jpg',
+			      },
+			],
+
+
+			Reads:[
+				 {
+			        title:"爱夏了夏天",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5716792.jpg',
+			      },
+			      
+			      {
+			        title:"夏墅堰",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5716802.jpg',
+			      },
+			      {
+			        title:"陈迹·清欢",
+			        icon:'http://103.235.234.147:6788/bookimg/I267.13872.jpg',
+			      },
+			      {
+			        title:"如果悲伤没有眼泪",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5713881.jpg',
+			      },
+			      {
+			        title:"华尔街继承者",
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5716878.jpg',
+			      },
+			],
+
+	}
+
+	new Vue({
+		el:".bk_con",
+		data:data
+	})
+	</script>
+</body>
+</html>
