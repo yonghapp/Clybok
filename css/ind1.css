@@ -5,7 +5,7 @@ body{
 }
 .top{
 	width:100%;
-	height:30vh;
+	height:56vw;
 	position:relative;
 	background-color: rgba(0,0,0,.4);
 
@@ -14,7 +14,7 @@ body{
 	position: absolute;
 	z-index: 1;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	height: 30vh;
+	height: 56vw;
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
 	-ms-transform: translateZ(0);
@@ -42,8 +42,8 @@ body{
 }
 
 #scroller li{
-	width: 100vw;
-	height:30vh;
+	width: 100%;
+	height:56vw;
 	float: left;
 }
 #scroller li img{
@@ -52,7 +52,7 @@ body{
 }
 .t_bg{
 	width:100%;
-	height:30vh;
+	height:56vw;
 	overflow:hidden;
 	position: relative;
 	z-index: 0;
@@ -60,31 +60,31 @@ body{
 	
 }
 .S_input{
-	position:absolute;
+	position:fixed;
 	z-index:999;
-	top:2vh;
+	top:2vw;
 	width:100%;
-	height:6.5vh;
+	height:11.3vw;
 	background:transparent;
 }
 .Imput{
 	width:80vw;
-	height:4.5vh;
-	margin:1vh auto;
+	height:8vw;
+	margin:1.6vw auto;
 	background: rgba(228,226,221,.7);
 	border-radius: 4vw;
 
 }
 .Imput span{
 	width:12vw;
-	height:4.5vh;
+	height:8vw;
 	position:relative;
 	top:0;
 	bottom:0;
 	margin:auto;
 	display: block;
 	font-weight:100;
-	line-height:4.5vh;
+	line-height:8vw;
 	color:#fff;
 	font-size:5vw;
 	text-align:center;
@@ -99,7 +99,7 @@ body{
 .Imput input{
 	height:100%;
 	border:none;
-	width:56vw;
+	width:54vw;
 	background: transparent;
 	color:#fff;
 }
@@ -126,7 +126,7 @@ body{
 	position:relative;
 	left:0;
 	right:0;
-	top:10px;
+	top:2vw;
 	margin:auto;
 	z-index:1;
 }
@@ -136,40 +136,40 @@ body{
 }
 .nav .con p{
 	width:100%;
-	height:4.5vh;
-	margin-top: 2vh;
-	line-height:4.5vh;
+	height:7.7vw;
+	margin-top: 1vw;
+	line-height:7.7vw;
 	text-align:center;
 }
 .bk_con{
 	overflow:hidden;
-	margin-bottom: 9.3vh;
+	margin-bottom: 14.3vw;
 }
 .hot_bk{
 	width:100%;
-	margin-top:0.8vh;
-	padding:1.1vh 0;
+	margin-top:1.6vw;
+	padding:1.8vw 0;
 	background: #fff;
 	overflow: hidden;
 	
 }
 .hot_bk .h_t{
 	width:94vw;
-	height:3vh;
+	height:4.8vw;
 	padding:0 3vw;
-	line-height:2.8vh;
+	line-height:4.8vw;
 }
 .hot_tt{
-	height:3vh;
-	line-height:3vh;
+	height:4.8vw;
+	line-height:4.8vw;
 	display:inline-block;
 	color:#f64f5e;
 	margin-left: 5vw;
 	position:relative;
 }
 .hot_tt i{
-	width:2.8vh;
-	height:2.8vh;
+	width:4.4vw;
+	height:4.4vw;
 	display:inline-block;
 	position:absolute;
 	top:0;
@@ -207,8 +207,7 @@ body{
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	// height: 21.1vh;
-	margin-top:2vh;
+	margin-top:2vw;
 	
 	overflow: hidden;
 	-ms-touch-action: none;
@@ -245,10 +244,10 @@ body{
 }
 .wrapper .scroller1 .book_tit,
 .hot_b2 .scrol2 .book_tit{
-	// height:3.2vh;
 	width:26vw;
+	height:5.3vw;
 	margin:0 auto;
-	line-height:3.2vh;
+	line-height:5.3vw;
 	text-align:center;
 	color:#666;
 	white-space:nowrap;
@@ -257,13 +256,13 @@ body{
 
 .foot{
 	width:100%;
-	height:7.1vh;
-	padding-top: 1.5vh;
+	height:13.3vw;
+	padding-top: 1.3vw;
 	background: #fff;
-	margin-top:7.1vh;
+	margin-top:13.3vw;
 	border-top:1px solid #bbbbbb;
 	position:fixed;
-	bottom:0vh;
+	bottom:0vw;
 	z-index:999;
 }
 .foot ul li{
@@ -278,7 +277,7 @@ body{
 	position:relative;
 	left:0;
 	right:0;
-	top:0.5vh;
+	top:1vw;
 	margin:auto;
 }
 .foot ul li p{

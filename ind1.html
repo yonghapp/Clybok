@@ -161,31 +161,28 @@
 
 			$(document).on("scroll",function(){
 				var Top=$("body").scrollTop();
-				console.log(Top)
-				if(Top>=parseInt(S_input.css('top'))){
-					S_input.css({
-						position:"fixed",
-						top:"0vh"
-					})
-				}else{
-					S_input.css({
-					    position:"absolute",
-						top:"2vh"
-					})
-					
-				}
-
-
-
 				if(Top>=B_top-S_input.height()){
 
 					S_input.css("background","#fff");
 					Imput.css("background","rgba(0,0,0,0.1)")
+					S_input.animate({
+						top:"0vh",
+					},10);
+					Imput.animate({
+						height:"7.8vw",
+						width:"79vw"
+					},10)
 					
 				}else{
 					S_input.css("background","transparent");
 					Imput.css("background","rgba(228,226,221,.7)")
-					
+					S_input.animate({
+						top:"2vw"
+					},10);
+					Imput.animate({
+						height:"8vw",
+						width:"80vw"
+					},10)
 				}
 				
 

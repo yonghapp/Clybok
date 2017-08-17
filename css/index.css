@@ -27,8 +27,8 @@ html,body{
 .app_pic{
 	width:33vw;
 	height:33vw;
-	margin: 12.4vh auto;
-	margin-bottom: 6.7vh;
+	margin: 22vw auto;
+	margin-bottom: 10vw;
 }
 .app_pic img{
 	width:100%;
@@ -36,20 +36,20 @@ html,body{
 }
 .name,.pass{
 	width:75vw;
-	height:6.2vh;
+	height:13.3vw;
 	border-bottom:1px solid #bfbfbf;
-	margin:3vh auto;
+	margin:5.3vw auto;
 }
 .name label,.pass label{
-	height:3.5vh;
-	width:3.5vh;
+	height:8vw;
+	width:8vw;
 	display: block;
-	line-height: 6vh;
+	line-height: 13vw;
 	font-size: 5vw;
 	color:#fff;
 	float:left;
 	text-align: center;
-	margin:1vh; 
+	margin:2.5vw; 
 }
 .name label{
 	background-image:url(../images/name.png);
@@ -67,24 +67,24 @@ html,body{
 .pass input{
 	background: transparent;
 	width:60vw;
-	height:6vh;
+	height:13vw;
 	float: right;
 	border:none;
-	line-height: 6vh;
+	line-height: 13vw;
 	font-size: 5vw;
 	color:#bdbdbc;
 }
 .submit{
 	width:75vw;
-	height:10.2vh;
-	margin:5vh auto;
+	height:10.6vw;
+	margin:8.8vw auto;
 }
 #btn{
 	width:100%;
-	height:6.2vh;
+	height:10.6vw;
 	border:none;
 	font-size: 6vw;
-	line-height: 6.2vh;
+	line-height: 10.6vw;
 	font-weight: 600;
 	background: #f64f5e;
 	border-radius: 5vw;
@@ -92,7 +92,7 @@ html,body{
 }
 .a_btn{
 	width:90%;
-	margin:1vh auto;
+	margin:2vw auto;
 }
 .a_btn a:first-child{
 	font-size:4vw;
@@ -110,7 +110,7 @@ html,body{
 	margin:1vh auto;
 }
 .other p{
-     margin-top: 7vh;
+     margin-top: 18.6vw;
 	width:100%;
 	text-align:center;
 	font-size:6vw;
@@ -119,7 +119,7 @@ html,body{
 }
 .other p span{
 	width:24.5vw;
-	height:1vh;
+	height:1px;
 	display:block;
 	border-top: 1px solid #fff7f7;
 	position:absolute;
