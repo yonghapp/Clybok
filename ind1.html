@@ -33,12 +33,12 @@
 					<li class="swiper-slide">
 						<img src="images/bg4.png" alt="">
 					</li>	
-					<li class="swiper-slide">
+					<!-- <li class="swiper-slide">
 						<img src="images/bg5.png" alt="">
 					</li>	
 					<li class="swiper-slide">
 						<img src="images/bg6.png" alt="">
-					</li>									
+					</li>	 -->								
 				</ul>
 			</div>
 		</div>
@@ -164,7 +164,7 @@
 				if(Top>=B_top-S_input.height()){
 
 					S_input.css("background","#fff");
-					Imput.css("background","rgba(0,0,0,0.1)")
+					Imput.css("background","rgba(256,79,94,.5)")
 					Imput.css({
 						height:"7.8vw",
 						width:"79vw"
@@ -201,9 +201,7 @@
 		Element.prototype.holder=function(){
 			var thisVal=this.value;
 			this.onfocus=function (){
-				if(this.value==thisVal){
-					this.value="";
-				}
+					window.open("Sou_lit.html")				
 			}
 			this.onblur=function (){
 				if(this.value==""){
