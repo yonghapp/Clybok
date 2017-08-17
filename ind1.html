@@ -8,40 +8,20 @@
 	<link rel="stylesheet" href="css/ind1.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
-
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="js/iscroll.js"></script>
+	<!-- <script type="text/javascript" src="js/iscroll.js"></script> -->
 	<script type="text/javascript" src="js/vue.js"></script>
 	<script type="text/javascript" src="js/swiper.min.js"></script>
-
-
-
-
-
-	<script type="text/javascript">
-
-	// var myScroll;
-
-
-
-	// function loaded () {
-	// 	myScroll = new IScroll('#wrapper', { eventPassthrough: true, scrollX: true, scrollY: false, preventDefault: false });
-	
-	// }
-
-	
-	</script>
 </head>
 <body>
 	<div class="top">
 		<div class="t_bg" id="wrapper">
 			<div id="scroller">
 				<ul  class="swiper-wrapper">
-					<li class="swiper-slide">
+					<li class="swiper-slide" >
 						<img src="images/bg1.png" alt="">
 					</li>
 					<li class="swiper-slide">
@@ -62,24 +42,15 @@
 				</ul>
 			</div>
 		</div>
-		<div class="Imput">
-			<span><i class="fa fa-search" class="I_l"></i></span>
-			<input type="text" value="我的前半生" id="input">
-			<span><i class="fa fa-camera-retro" class="I_r"></i></span>
+		<div class="S_input">
+			<div class="Imput">
+				<span><i class="fa fa-search" class="I_l"></i></span>
+				<input type="text" value="我的前半生" id="input">
+				<span><i class="fa fa-camera-retro" class="I_r"></i></span>
+			</div>
 		</div>
+		
 	</div>
-	 <script type="text/javascript">  
-            var mySwiper = new Swiper("#scroller",{ 
-            loop:true,  
-            pagination:".swiper-pagination", 
-            // prevButton:".swiper-button-prev",  
-            // nextButton:".swiper-button-next",
-            paginationClickable: true, 
-            spaceBetween: 0,
-            autoplayDisableOnInteraction : false,
-            autoplay:3000/*每隔3秒自动播放*/  
-        })  
-        </script>
 	<div class="nav">
 		<div class="con">
 			<span><img src="images/1.png" alt=""></span>
@@ -183,6 +154,63 @@
 
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">
+			 var S_input=$(".S_input");
+			 var Imput=$(".Imput");
+			 var B_top=$(".top").height();
+				console.log(parseInt(S_input.css('top') ))
+
+			$(document).on("scroll",function(){
+				var Top=$("body").scrollTop();
+				console.log(Top)
+				if(Top>=parseInt(S_input.css('top'))){
+					S_input.css({
+						position:"fixed",
+						top:"0vh"
+					})
+				}else{
+					S_input.css({
+					    position:"absolute",
+						top:"2vh"
+					})
+					
+				}
+
+
+
+				if(Top>=B_top-S_input.height()){
+
+					S_input.css("background","#fff");
+					Imput.css("background","rgba(0,0,0,0.1)")
+					
+				}else{
+					S_input.css("background","transparent");
+					Imput.css("background","rgba(228,226,221,.7)")
+					
+				}
+				
+
+				
+				
+		})
+
+
+
+   		$(document).ready(function () {
+　　        $('body').height($('body')[0].clientHeight);
+
+		 var mySwiper = new Swiper("#scroller",{ 
+	        loop:true,  
+	        pagination:".swiper-pagination", 
+	        // prevButton:".swiper-button-prev",  
+	        // nextButton:".swiper-button-next",
+	        paginationClickable: true, 
+	        spaceBetween: 0,
+	        autoplayDisableOnInteraction : false,
+	        autoplay:3000/*每隔3秒自动播放*/  
+         })  
+
+
+        
 
 		var oInput=document.getElementById("input");
 		Element.prototype.holder=function(){
@@ -201,7 +229,7 @@
 		oInput.holder();
 
 
-		$(function(){
+		
 			var con_len=$("#scroller").find("li");
 			var con_len1=$(".scroller1").find("li");
 			var con_len2=$(".scrol2").find("li");
@@ -305,6 +333,33 @@
 			      },
 			],
 
+			Banners:[
+				 {
+			 
+			        pic:'images/bg1.png',
+			      },
+			      
+			      {
+			       
+			        pic:'images/bg2.png',
+			      },
+			      {
+			       
+			        pic:'images/bg3.png',
+			      },
+			      {
+			        
+			        pic:'images/bg4.png',
+			      },
+			      {
+			        
+			        pic:'images/bg5.png',
+			      },
+			      {
+			        
+			        pic:'images/bg6.png',
+			      },
+			],
 	}
 
 	new Vue({
