@@ -23,9 +23,10 @@
 			height:13.4vw;
 			background: #f3f1f1;
 			overflow: hidden;
+			display: fixed;
 		}
 		.S_left{
-			width:10vw;
+			width:7vw;
 			height:9vw;
 			display: inline-block;
 			position: absolute;
@@ -35,16 +36,18 @@
 			margin: auto;
 			line-height: 9vw;
 			text-align: center;
-			font-size: 5vw;
+			font-size: 6vw;
 		}
-
+		.S_left a{
+			display: block;
+		}
 		.S-right{
 			position: absolute;
 			top:0;
 			bottom:0;
 			right: 2vw;
 			margin: auto;
-			width:10vw;
+			width:12vw;
 			height:6vw;
 			line-height: 6vw;
 			text-align: center;
@@ -56,6 +59,8 @@
 
 		}
 		.Imput{
+			position: relative;
+			left:-3vw;
 			width:75vw;
 			height:8vw;
 			margin:2.7vw auto;
@@ -96,7 +101,7 @@
 			line-height: 10vw;
 			margin: 14.4vw auto;
 			margin-bottom:0; 
-			font-size: 3.4vw;
+			font-size: 4vw;
 			color:#666;
 		}
 		.history p span{
@@ -106,17 +111,19 @@
 			float: right;
 			text-align: center;
 			line-height: 10vw;
-			font-size: 4vw;
+			font-size: 3.8vw;
 			color:#666;
 		}
 		.h_list a{
 			padding: 1vw 2vw;
 			background:#f3f1f1;
 			margin: 2vw;
+			font-size: 3.4vw;
+			border-radius: 3vw;
 		}
 		.Alert{
-			width: 60vw;
-			height: 20vw;
+			width: 70vw;
+			height: 30vw;
 			background: #fff;
 			position: fixed;
 			top:0;
@@ -125,23 +132,26 @@
 			right: 0;
 			margin: auto;
 			z-index: 9999;
+			display: fixed;
 		}
 		.Alert p{
 			width: 100%;
-			height: 7vw;
-			line-height: 7vw;
+			height: 10vw;
+			line-height: 10vw;
 			text-align: center;
-			margin-top: 3vw;
+			margin-top: 6vw;
+			font-size: 5vw;
 		}
 		.Alert span{
-			width: 27vw;
-			height: 7vw;
+			width: 30vw;
+			height: 9vw;
 			text-align: center;
-			line-height: 7vw;
+			line-height: 9vw;
 			display: inline-block;
-			margin: 1.5vw ;
-			font-size: 4vw;
+			margin: 2.9vw ;
+			font-size: 5vw;
 			color:#fff;
+
 		}
 		.Alert .f_clear{
 		
@@ -157,15 +167,15 @@
 <body>
 	<div class="ht_con">
 		<div class="S_input">
-			<span class="S_left"><i class="fa fa-angle-left"></i></span>
+			<span class="S_left"><a href="javascript:history.go(-1)"><i class="fa fa-angle-left"></i></a></span>
 				<div class="Imput">
-					<input type="text" placeholder="我的前半生" id="input" v-model="txt">
+					<input type="text" placeholder="请输入书名、作者、关键词" id="input" >
 					<span><i class="fa fa-camera-retro" class="I_r"></i></span>
 				</div>
 			<span class="S-right" v-on:click="Add()">搜索</span>
 		</div>
 		<div class="history">
-			<p class="h_t">历史搜索<span v-on:click="deleta()"><i class="fa fa-trash-o"></i></span></p>
+			<p class="h_t">历史搜索<span v-on:click="deleta()" v-show="hide"><i class="fa fa-trash-o"></i></span></p>
 			<div class="h_list">
 				<a href=""  v-for="history in historys">{{history.txt}}</a>
 			</div>
@@ -214,7 +224,6 @@
 		<script type="text/javascript">
 
 
-		var h_txt=$("#input").val();
 	new Vue({
 		el:".ht_con",
 		data:{
@@ -249,7 +258,8 @@
 					      },
 					],
 			show:false,
-			txt:"",
+			hide:true,
+			
 				},
 			
 
@@ -259,13 +269,25 @@
 					this.show=true;
 				},
 				Add:function(){
-					// this.historys.push({ txt:+this.txt+})
-					// console.log(this.historys)
-					// alert("zsf")
+					
+					let h_txt=$("#input").val()
+
+					// let tt="{txt:"+"'h_txt'"+"}"
+					// // let yu=tt.split()
+					// console.log(tt)
+				
+
+					// this.historys.txt.push(h_txt)
+					// 	console.log(this.historys)
+					$(".h_list").append("<a href=''>"+h_txt+"</a>")
+					
+					
+				
 				},
 				TRUE:function(){
 					this.historys="",
-					this.show=false
+					this.show=false,
+					this.hide=false
 				},
 				FALSE:function(){
 					this.show=false

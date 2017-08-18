@@ -15,6 +15,7 @@
 	<!-- <script type="text/javascript" src="js/iscroll.js"></script> -->
 	<script type="text/javascript" src="js/vue.js"></script>
 	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/jquery.color.js"></script>
 </head>
 <body>
 	<div class="top">
@@ -22,23 +23,23 @@
 			<div id="scroller">
 				<ul  class="swiper-wrapper">
 					<li class="swiper-slide" >
-						<img src="images/bg1.png" alt="">
+						<img src="images/bg1.webp" alt="">
 					</li>
 					<li class="swiper-slide">
-						<img src="images/bg2.png" alt="">
+						<img src="images/bg2.webp" alt="">
 					</li>
 					<li class="swiper-slide">
-						<img src="images/bg3.png" alt="">
+						<img src="images/bg3.webp" alt="">
 					</li>
 					<li class="swiper-slide">
-						<img src="images/bg4.png" alt="">
-					</li>	
-					<!-- <li class="swiper-slide">
-						<img src="images/bg5.png" alt="">
+						<img src="images/bg4.webp" alt="">
 					</li>	
 					<li class="swiper-slide">
-						<img src="images/bg6.png" alt="">
-					</li>	 -->								
+						<img src="images/bg5.webp" alt="">
+					</li>	
+					<li class="swiper-slide">
+						<img src="images/bg6.webp" alt="">
+					</li>									
 				</ul>
 			</div>
 		</div>
@@ -164,11 +165,15 @@
 				if(Top>=B_top-S_input.height()){
 
 					S_input.css("background","#fff");
-					Imput.css("background","rgba(256,79,94,.5)")
+					Imput.css("background","rgba(244,31,14,.3)" )
+						
+					  
 					Imput.css({
 						height:"7.8vw",
 						width:"79vw"
 					})
+
+
 					
 				}else{
 					S_input.css("background","transparent");
@@ -201,7 +206,11 @@
 		Element.prototype.holder=function(){
 			var thisVal=this.value;
 			this.onfocus=function (){
-					window.open("Sou_lit.html")				
+				if(this.value==thisVal){
+					this.value="";
+					window.open("Sou_lit.html")	
+				}
+								
 			}
 			this.onblur=function (){
 				if(this.value==""){
