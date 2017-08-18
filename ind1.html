@@ -15,7 +15,6 @@
 	<!-- <script type="text/javascript" src="js/iscroll.js"></script> -->
 	<script type="text/javascript" src="js/vue.js"></script>
 	<script type="text/javascript" src="js/swiper.min.js"></script>
-	<script type="text/javascript" src="js/jquery.color.js"></script>
 </head>
 <body>
 	<div class="top">
@@ -75,14 +74,14 @@
 		<div class="hot_bk">
 			<p class="h_t">
 				<span class="hot_tt"><i></i>热门推荐</span>
-				<span class="hot_more">更多 <i class="fa fa-angle-right"></i></span>
+				<span class="hot_more"><a href="Sou_lit.html" style="display:block;">更多 <i class="fa fa-angle-right"></i></a></span>
 			</p>
 			<div class="wrapper">
 				<div class="scroller1">
 					<ul>
-						<li v-for="Hot in Hots">
+						<li v-for="Hot in Hots"><a href="">
 							<div class="book_pic"><img v-bind:src="Hot.icon" alt=""></div>
-							<p class="book_tit">{{Hot.title}}</p>
+							<p class="book_tit">{{Hot.title}}</p></a>
 						</li>									
 					</ul>
 				</div>
@@ -97,9 +96,9 @@
 			<div id="hot_b2" class="hot_b2">
 				<div id="scrol2" class="scrol2">
 					<ul>
-						<li v-for="New in News">
+						<li v-for="New in News"><a href="">
 							<div class="book_pic"><img v-bind:src="New.icon" alt=""></div>
-							<p class="book_tit">{{New.title}}</p>
+							<p class="book_tit">{{New.title}}</p></a>
 						</li>									
 					</ul>
 				</div>
@@ -114,9 +113,9 @@
 			<div id="hot_b2" class="hot_b2">
 				<div id="scrol2" class="scrol2">
 					<ul>
-						<li v-for="Read in Reads">
+						<li v-for="Read in Reads"><a href="">
 							<div class="book_pic"><img v-bind:src="Read.icon" alt=""></div>
-							<p class="book_tit">{{Read.title}}</p>
+							<p class="book_tit">{{Read.title}}</p></a>
 						</li>									
 					</ul>
 				</div>
@@ -149,10 +148,6 @@
 		</ul>
 
 	</div>
-
-
-
-
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">
 			 var S_input=$(".S_input");
@@ -208,7 +203,7 @@
 			this.onfocus=function (){
 				if(this.value==thisVal){
 					this.value="";
-					window.open("Sou_lit.html")	
+					window.location.replace("Sou_lit.html")	
 				}
 								
 			}

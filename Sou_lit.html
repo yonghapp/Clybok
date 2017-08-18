@@ -177,7 +177,8 @@
 		<div class="history">
 			<p class="h_t">历史搜索<span v-on:click="deleta()" v-show="hide"><i class="fa fa-trash-o"></i></span></p>
 			<div class="h_list">
-				<a href=""  v-for="history in historys">{{history.txt}}</a>
+				<a href="" v-for="history in historys">{{history.txt}}</a>
+				<!-- <a href="" v-for="newhistory in newhistorys">{{newhistory.tlt}}</a> -->
 			</div>
 		</div>
 		
@@ -191,9 +192,10 @@
 
 
 		<script type="text/javascript">
-		$(".wrap").css({
+		$(document).ready(function(){
+			$(".wrap").css({
 		     "z-index":"9998",
-		     "display":"clock",
+		     "display":"none",
 		     "position": "fixed",
 		     "top": "0",
 		     "left": "0",
@@ -218,6 +220,8 @@
 			}
 		}
 		oInput.holder();
+		})
+		
 
 		</script>
 
@@ -259,8 +263,12 @@
 					],
 			show:false,
 			hide:true,
+			// newhistorys:[
+			// 	{tlt:""}
+			// ],
+
 			
-				},
+		},
 			
 
 		methods:{
@@ -279,19 +287,29 @@
 
 					// this.historys.txt.push(h_txt)
 					// 	console.log(this.historys)
+				if(!h_txt==""){
+
 					$(".h_list").append("<a href=''>"+h_txt+"</a>")
-					
+					// this.newhistorys.tlt=h_txt
+					// localStorage.setItem(this.newhistorys.tlt,h_txt);
+					// alert("储存成功！")
+					// location.reload();
+					// console.log(this.newhistorys)
+				}
+				$("#input").val("")
 					
 				
 				},
 				TRUE:function(){
 					this.historys="",
 					this.show=false,
-					this.hide=false
+					this.hide=false,
+					 localStorage.clear()
 				},
 				FALSE:function(){
 					this.show=false
 				}
+
 			}
 	})
 
