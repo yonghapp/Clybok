@@ -47,9 +47,9 @@
 			bottom:0;
 			right: 2vw;
 			margin: auto;
-			width:12vw;
-			height:6vw;
-			line-height: 6vw;
+			width:13vw;
+			height:7vw;
+			line-height: 7vw;
 			text-align: center;
 			display: inline-block;
 			background: #fb7a86;
@@ -82,7 +82,7 @@
 			font-size:5vw;
 			text-align:center;
 		}
-	
+
 		.Imput span:last-child{
 			float:right;
 
@@ -169,17 +169,18 @@
 		<div class="S_input">
 			<span class="S_left"><a href="javascript:history.go(-1)"><i class="fa fa-angle-left"></i></a></span>
 				<div class="Imput">
-					<input type="text" placeholder="请输入书名、作者、关键词" id="input" >
+					<input type="text" placeholder="请输入书名、作者、关键词" id="input" v-model="book">
 					<span><i class="fa fa-camera-retro" class="I_r"></i></span>
 				</div>
 			<span class="S-right" v-on:click="Add()">搜索</span>
 		</div>
 		<div class="history">
-			<p class="h_t">历史搜索<span v-on:click="deleta()" v-show="hide"><i class="fa fa-trash-o"></i></span></p>
+			<p class="h_t">历史搜索<span v-on:click="deleta()" v-show="historys.length>=1||newhisturys.length>=1"><i class="fa fa-trash-o"></i></span></p>
 			<div class="h_list">
 				<a href="" v-for="history in historys">{{history.txt}}</a>
-				<!-- <a href="" v-for="newhistory in newhistorys">{{newhistory.tlt}}</a> -->
+				<a href="" v-for="(val,index) in newhisturys">{{val.book}}</a>
 			</div>
+			<p v-show="historys.length==0&&newhisturys.length==0" style="text-align:center;">暂无历史记录......</p>
 		</div>
 		
 		<div class="Alert"  v-show="show">
@@ -219,10 +220,7 @@
 				}
 			}
 		}
-		oInput.holder();
-		})
-		
-
+	})
 		</script>
 
 		<script type="text/javascript">
@@ -261,11 +259,11 @@
 					      	txt:'首都周围的八大集团军',
 					      },
 					],
+			newhisturys:[],
+			book:'',											
 			show:false,
 			hide:true,
-			// newhistorys:[
-			// 	{tlt:""}
-			// ],
+			
 
 			
 		},
@@ -277,38 +275,30 @@
 					this.show=true;
 				},
 				Add:function(){
-					
-					let h_txt=$("#input").val()
 
-					// let tt="{txt:"+"'h_txt'"+"}"
-					// // let yu=tt.split()
-					// console.log(tt)
-				
+						if(this.book!=""){
+					       
+							this.newhisturys.push({
+								book:this.book,
+								
+							})
 
-					// this.historys.txt.push(h_txt)
-					// 	console.log(this.historys)
-				if(!h_txt==""){
-
-					$(".h_list").append("<a href=''>"+h_txt+"</a>")
-					// this.newhistorys.tlt=h_txt
-					// localStorage.setItem(this.newhistorys.tlt,h_txt);
-					// alert("储存成功！")
-					// location.reload();
-					// console.log(this.newhistorys)
-				}
-				$("#input").val("")
-					
-				
+						}
+						this.book="";
 				},
 				TRUE:function(){
-					this.historys="",
-					this.show=false,
-					this.hide=false,
-					 localStorage.clear()
+					this.historys.splice(0,this.historys.length);
+					this.newhisturys.splice(0,this.newhisturys.length);
+					// this.book="";
+					this.show=false
+		 
 				},
+
 				FALSE:function(){
 					this.show=false
-				}
+				      }
+					
+					
 
 			}
 	})

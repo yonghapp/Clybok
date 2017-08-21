@@ -45,14 +45,12 @@ body{
 #scroller li {
 	width: 33vw;
 	height: 56vw;
-	// padding-top: 3vw;
 	float: left;
 	background: #fff;
-	border-right:1px solid #eee;
+	border-right:1px solid #ccc;
 }
 .book_pic{
 	width:26vw;
-	border-radius:2vw;
 	overflow:hidden;
 	margin:0 auto;
 }
@@ -67,22 +65,250 @@ body{
 	text-align:center;
 	white-space:nowrap;
 	overflow:hidden;
+	font-size: 3vw;
 }
 .book_tea{
 	width:24vw;
-	margin:0 auto;
-	margin-top:0vw;
+	margin:1vw auto;
 	text-align:center;
 	color:#858584;
 	white-space:nowrap;
 	overflow:hidden;
 }
-.scroller ul li:nth-child(1) .book_tit{
+
+.bk_l{
+	width:100%;
+	margin-top:2vw;
+	background: #fff;
+	padding-top: 2vw;
+
+}
+.bk_c{
+	width:95vw;
+	margin:2vw auto;
+	overflow:hidden;
+}
+.bk_l ul li{
+	width:100%;
+	border-bottom: 1px solid #ccc;
+	overflow:hidden;
+}
+.bk_l .h_t{
+	width:94vw;
+	height:4.8vw;
+	padding:0 3vw;
+	line-height:4.8vw;
+}
+.hot_tt{
+	height:4.8vw;
+	line-height:4.8vw;
+	display:inline-block;
+	color:#f64f5e;
+	margin-left: 5vw;
+	position:relative;
+}
+.hot_tt i{
+	width:4.4vw;
+	height:4.4vw;
+	display:inline-block;
+	position:absolute;
+	top:0;
+	left:-5vw;
+}
+.hot_tt i{
+	background-image:url("../images/hot.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.bk_l ul li .bk_c .b_pic{
+	width:26vw;
+	overflow:hidden;
+	float:left;
+}
+.b_pic img{
+	width:100%;
+	height:100%;
+}
+.bk_l ul li .bk_c .b_con{
+	width:69vw;
+	float:left;
+}
+.b_con p,.book_tt{
+	padding-left: 4vw;
+}
+.b_tlt{
+	font-size:3vw;
 	color:#000;
+	height:6vw;
+	line-height:6vw;
+	width:64vw;
+	overflow:hidden;
 }
-.scroller ul li:nth-child(2n) .book_tit{
-	color:#2ff596;
+.b_lder{
+	font-size:2.5vw;
+	color:#888;
+	height:7vw;
+	line-height:7vw;
 }
-.scroller ul li:nth-child(2n+1) .book_tit{
-	color:#2f9af5;
+.b_lder span{
+	width:4vw;
+	height:4vw;
+	margin-right: 1vw;
+	line-height:4vw;
+	text-align:center;
+	border-radius: 50%;
+	color:#fff;
+	background: #f4ae76;
+	display:inline-block;
+}
+.book_tt{
+	width:64vw;
+	margin-top:8vw;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	height:10vw;
+	color:#888;
+	font-size:2.5vw;
+}
+.fin_more{
+	width:100%;
+	text-align:center;
+	height:10vw;
+	line-height:10vw;
+	color:#000;
+	background: #fff;
+}
+.pp_box{
+	width:100%;
+	margin-top:2vw;
+	background: #fff;
+	padding-top: 1vw;
+}
+.pp{
+	width:95vw;
+	margin:2vw auto;
+	overflow:hidden;
+}
+.p_t{
+	font-size:3.6vw;
+	color:#000;
+	margin-bottom: 2vw;
+}
+
+.p_t span{
+	font-weight: 900;
+	color:#158dea;
+}
+.pp_pic{
+	width:100%;
+	margin-top:2vw;
+}
+.pp_pic img{
+	width:100%;
+	height:100%;
+}
+.s_t span{
+	font-weight: 900;
+	color:#ec8223;
+}
+.ss ul li{
+	width:31.6vw;
+	float: left;
+	margin-bottom:2vw;
+}
+.s_pic{
+	width:26vw;
+	overflow:hidden;
+	margin:0 auto;
+}
+.s_pic img{
+	width:100%;
+	height:100%;
+}
+.s_tit{
+	width:26vw;
+	height:5.3vw;
+	margin:0 auto;
+	line-height:5.3vw;
+	text-align:center;
+	color:#666;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.Hot_con{
+	padding-bottom: 13.3vw;
+}
+
+
+
+.foot{
+	width:100%;
+	height:13.3vw;
+	padding-top: 1.3vw;
+	background: #fff;
+	border-top:1px solid #bbbbbb;
+	position:fixed;
+	bottom:0vw;
+	z-index:999;
+}
+.foot ul li{
+	width:20vw;
+	height:20vw;
+	float:left;
+	position:relative;
+}
+.foot ul li div{
+	width:6vw;
+	height:6vw;
+	position:relative;
+	left:0;
+	right:0;
+	top:2vw;
+	margin:auto;
+}
+.foot ul li p{
+	width:100%;
+	display:block;
+	text-align:center;
+	color:#666;
+	position:relative;
+	left:0;
+	right:0;
+	top:3vw;
+	font-size:2.6vw;
+	margin:auto;
+}
+.foot ul li:nth-child(1) p{
+	color:#f64f5e;
+}
+.foot ul li div i{
+	width:100%;
+	height:100%;
+	display:block;
+
+}
+.foot ul li:nth-child(1) div i{
+	background-image:url("../images/icon/11.png");
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+.foot ul li:nth-child(2) div i{
+	background-image:url("../images/icon/2.png");
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+.foot ul li:nth-child(3) div i{
+	background-image:url("../images/icon/3.png");
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+.foot ul li:nth-child(4) div i{
+	background-image:url("../images/icon/4.png");
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+.foot ul li:nth-child(5) div i{
+	background-image:url("../images/icon/5.png");
+	background-size:100%;
+	background-repeat: no-repeat;
 }

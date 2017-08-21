@@ -15,50 +15,334 @@
 	<script type="text/javascript" src="js/iscroll.js"></script>
 	<script type="text/javascript" src="js/vue.js"></script>
 	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script src="js/bootstrap-waterfall.js"></script>
 </head>
 <body onload="loaded()">
-<div class="Hot_con">
-	<div id="wrapper">
-		<div id="scroller" class="scroller">
-			<ul>
-				<li v-for="Hot in Hots"><a href="">
-					<p class="book_tit">{{Hot.title}}</p>
-					<p class="book_tea">{{Hot.team}}</p>
-					<div class="book_pic"><img v-bind:src="Hot.icon" alt=""></div></a>
-				</li>	
-			</ul>
+	<div class="Hot_con">
+		<div id="wrapper">
+			<div id="scroller" class="scroller">
+				<ul>
+					<li v-for="Hot in Hots"><a href=""> 
+						<p class="book_tit">{{Hot.title}}</p>
+						<p class="book_tea">{{Hot.team}}</p>
+						<div class="book_pic"><img v-bind:src="Hot.icon" alt=""></div></a>
+					</li>	
+				</ul>
 
+			</div>
+		</div>	
+
+		<div class="bk_l">
+		        <p class="h_t">
+					<span class="hot_tt"><i></i>热门推荐</span>
+				</p>
+
+				<ul class="waterfall">
+					<li  v-for="HotList in HotLists">
+						<div class="bk_c">
+				          <div class="b_pic">
+				             <image v-bind:src="HotList.icon"></image>
+				          </div>
+				          <div class="b_con"> 
+				          		<p class="b_tlt">{{HotList.title}}</p>
+				          		<p class="b_lder"><span><i class="fa fa-user"></i></span>{{HotList.leadr}}</p>
+
+				          		<div class="book_tt">
+				          		{{HotList.con}}
+				          		</div>
+
+				          </div>
+				        </div>
+					</li>
+				</ul>
+
+				<div class="container">
+				  <div class="waterfall">
+				  </div>
+			    </div>
 		</div>
-	</div>	
+		<div class="fin_more" >
+			查看更多
+		</div>
+	    <div class="pp_box">
+			<div class="pp">
+				<p class="p_t"><span>|</span>七夕节 : 牛郎织女传说</p>
+				<p class="p_c">鹊桥仙（宋）秦观 纤云弄巧，飞星传恨，银汉迢迢暗渡。 金风玉露一相逢，便胜却人间无数...</p>
+				<div class="pp_pic">
+					<img src="http://103.235.234.147:6788/images/qixipc.jpg" alt="">
+				</div>
+		   </div>
+		    
+		</div>
 
-	  <!--   <div class="book">
-          <div class="book_pic">
-            <image src="{{item.images.small}}"></image>
-          </div>
-          <div class="book_info">
-            <div class="base_info">
-              <text>书名:<text style="color:#f8982a;">{{item.title}}</text>\n 作者：{{item.directors[0].name}}\n 演员：
-                <text wx:for="{{item.casts}}"> {{item.name}} </text>   
-              </text> 
-            </div>
-          </div>
-          <div class="rate">
-                <text style="font-size:30rpx;color:#f1f1f1;"><text style="color:#f8982a;font-size:40rpx;">{{item.rating.average}}</text>分</text>
-          </div>
-        </div> -->
+		<div class="ss_box pp_box">
+			<div class="ss pp">
+				<p class="s_t p_t"><span>|</span>随便看看</p>
+				<ul>
+					<li><a href="">
+						<div class="s_pic"><img src="http://103.235.234.147:6788/bookimg/I546.45104.jpg" alt=""></div>
+						<p class="s_tit">最后的精灵</p></a>
+					</li>
+					<li><a href="">
+						<div class="s_pic"><img src="http://103.235.234.147:6788/bookimg/I267199.jpg" alt=""></div>
+						<p class="s_tit">贪心的女人更好命</p></a>
+					</li>
+					<li><a href="">
+						<div class="s_pic"><img src="http://103.235.234.147:6788/bookimg/I26628.jpg" alt=""></div>
+						<p class="s_tit">想牵着你的手,在青山绿水间</p></a>
+					</li>
+					<li><a href="">
+						<div class="s_pic"><img src="http://103.235.234.147:6788/bookimg/I26712832.jpg" alt=""></div>
+						<p class="s_tit">皮囊</p></a>
+					</li>	
+					<li><a href="">
+						<div class="s_pic"><img src="http://103.235.234.147:6788/bookimg/I254.jpg" alt=""></div>
+						<p class="s_tit">博望志 :另一块砖</p></a>
+					</li>	
+					<li><a href="">
+						<div class="s_pic"><img src="http://103.235.234.147:6788/bookimg/I267.13641.jpg" alt=""></div>
+						<p class="s_tit">魔鬼聊天术</p></a>
+					</li>									
+			    </ul>
+		   </div>
+		    
+		</div>
+		
+		<div class="pp_box">
+			<div class="pp">
+				<p class="p_t"><span style="color:#f0210b;">|</span>43个街乡自取点火力全开</p>
+				<p class="p_c">八一建军节这一天朝阳图书馆43个街乡自取点火力全开，预计8月7日之前43个街乡将全部启动。</p>
+				<div class="pp_pic">
+					<img src="http://103.235.234.147:6788/images/ban001.png" alt="">
+				</div>
+		   </div>
+		    
+		</div>
 
-</div>
+	 </div>
+
+
+
+
+	<script id="waterfall-template" type="text/template">
+		<ul>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/I247.5716790.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">一个人的天光</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i>暂无作者信息</span></p>
+
+		          		<div class="book_tt">
+		          			那时的我们，美得像朝阳一样，挥洒着青春，边走边唱，以为能走到远方。
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/F272.9303.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">会带人，才有高效团队</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i>暂无作者信息</span></p>
+
+		          		<div class="book_tt">
+		          			针对管理者在打造团队时的困惑，作者通过多年的研究与实践，总结出一个适用于高效团队的衡量标准——团队指数。
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/I313.7314-2.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">及时说爱你，趁还来得及∶写在最后1778天的绝恋故事汇</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i>暂无作者信息</span></p>
+
+		          		<div class="book_tt">
+		          			人生苦短，能有一心人执手相伴一生是所有人*美的期盼，然而命运无常，常常会让我们不能一起走到白头，一起看透...
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/B8213758.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">魅力女人受用一生的处世智慧全集</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i>暂无作者信息</span></p>
+
+		          		<div class="book_tt">
+		          			懂得处世之道的女性能轻松惬意地面对生活，在对待工作、情感、家庭中的各种问题时会游刃有...
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/K2094316.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">一个海外华人讲的中国人的故事</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i>暂无作者信息</span></p>
+
+		          		<div class="book_tt">
+		          			《一个海外华人讲的中国人的故事》一书的作者 李乃义是一个具备现代高科技背景的华人，有当代科 学素养和深厚的文史功底。他意图...
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/I247.5716792.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">爱夏了夏天</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i>暂无作者信息</span></p>
+
+		          		<div class="book_tt">
+		          			《爱夏了夏天》是林小小所著的一部长篇小说。《爱夏了夏天》讲述：苏培乐在一场火灾中被...
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/I247.5716802.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">夏墅堰</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i>暂无作者信息</span></p>
+
+		          		<div class="book_tt">
+		          			夏墅堰是一座古城，几千年前一个因为临河而建的堤坝繁荣起来而得名的城市。多少年之后黄...
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/I247.5713881.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">如果悲伤没有眼泪</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i>暂无作者信息</span></p>
+
+		          		<div class="book_tt">
+		          			花火鬼才 夏栀 一气呵成的灵感之作！ 
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/I26713181.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">我的朋友是怪咖，不许笑</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i>暂无作者信息</span></p>
+
+		          		<div class="book_tt">
+		          			他们完美地避开了正常人的认知，影响着我们的生活，伤害着我们的感情。我们无休止的忍耐只会换来他们无止境地得寸进...
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+		</ul>
+	</script>
+   <div class="foot">
+		<ul>
+			<li>
+				<div><i></i></div>
+				<p>首页</p>
+			</li>
+			<li>
+				<div><i></i></div>
+				<p>消息</p>
+			</li>
+			<li>
+				<div><i></i></div>
+				<p>馆藏查询</p>
+			</li>
+			<li>
+				<div><i></i></div>
+				<p>书车</p>
+			</li>
+			<li>
+				<div><i></i></div>
+				<p>我的</p>
+			</li>
+		</ul>
+
+	</div>
 <script type="text/javascript">
 $(document).ready(function(){
 
 
 	let _Li=$(".scroller").find("li");
 	
-	console.log(_Li.width())
+	// console.log(_Li.width())
 	$(".scroller").css({
 		width:_Li.length*(_Li.width()+1)
+	});
+
+	$(".fin_more").click(function(){
+		$('.waterfall')
+			.data('bootstrap-waterfall-template', $('#waterfall-template').html())
+			.waterfall();
+		$('.waterfall')
+			.data('bootstrap-waterfall-template', $('#waterfall-template').html())
+			.waterfall();
+		$(".fin_more").addClass("none");
 	})
+
+	
+
+	//随机色
+	function Color(){
+		let Co="";
+		for(let i=0;i<6;i++){
+			let Col=Math.round(Math.random()*16).toString(16);
+			Co=Co+Col;
+		}
+		Co="#"+Co
+		return Co;
+	}
+	let book_tit=document.querySelectorAll(".book_tit");
+	for(let i=0;i<book_tit.length;i++){
+		book_tit[i].style.color=Color();
+	}
 })
+
+
+
+
 
 var myScroll;
 
@@ -66,6 +350,12 @@ function loaded () {
 	myScroll = new IScroll('#wrapper', { eventPassthrough: true, scrollX: true, scrollY: false, preventDefault: false });
 }
 
+	
+
+
+
+
+	
 </script>
 
 	<script type="text/javascript">
@@ -112,11 +402,40 @@ function loaded () {
 			        icon:'http://103.235.234.147:6788/bookimg/I247.5717698.jpg',
 			      },
 			  ],
+			HotLists:[
+				  {
+			        title:"河对岸的窗",
+			        leadr:'布莱恩·莫顿',
+			        con:'诺拉和埃希克分手已经五年了。而这一夜，埃希克在电....',
+			        icon:'http://103.235.234.147:6788/bookimg/I712.453159.jpg',
+			      },
+				  {
+			        title:"牛郎织女",
+			        leadr:'成君忆',
+			        con:'"天上一条河汉，地上一条河汉。天上一位织女，地上一群织女。',
+			        icon:'http://103.235.234.147:6788/bookimg/I277.38262.jpg',
+			      },
+			      {
+			        title:"像羊那样叫唤",
+			        leadr:'丁庆中',
+			        con:'这是华北乡村当代生活最真实的风情画卷。作品着重地概述了两个家族（赵家与张家）的争斗史。',
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5717688.jpg',
+			      },
+			     {
+			        title:"念你的时间比爱长",
+			        leadr:'',
+			        con:'乔小池是一家咖啡屋的店员，美丽，忧郁。暖男陆信阳不知不觉被她吸.....',
+			        icon:'http://103.235.234.147:6788/bookimg/I247.5716614.jpg',
+			      },
+			],
 	    }
 
 	    new Vue({
 		el:".Hot_con",
-		data:data
+		data:data,
+		methods:{
+
+		}
 	})
 
 	</script>
