@@ -4,18 +4,25 @@ html,body{
 	height: 100%;
 	position:relative;
 	z-index:0;
+
+}
+body{
+
 	background-image:url(../images/bg.webp);
 	background-position:center top;
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
-
 .app{
 	width: 100%;
 	height: 100%;
 	position: relative;
 	z-index: -9;
 	overflow: hidden;
+	background-image:url(../images/bg.webp);
+	background-position:center top;
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 .app_pic{
 	width:33vw;
@@ -33,6 +40,7 @@ html,body{
 	border-bottom:1px solid #bfbfbf;
 	margin:3.2vw auto;
 }
+
 .name label,.pass label{
 	height:7vw;
 	width:7vw;
@@ -73,6 +81,7 @@ html,body{
 	height:10.6vw;
 	margin:10.8vw auto;
 }
+
 #btn{
 	width:100%;
 	height:10.6vw;
@@ -82,6 +91,11 @@ html,body{
 	font-weight: 600;
 	background: #f64f5e;
 	border-radius: 5vw;
+	color:#fff;
+}
+#btn a{
+	display:block;
+	font-size: 6vw;
 	color:#fff;
 }
 .a_btn{

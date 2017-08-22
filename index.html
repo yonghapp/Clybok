@@ -8,8 +8,7 @@
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="js/vue.js"></script>
@@ -24,16 +23,15 @@
 			<div class="name">
 				   <label for="name"></label>
 				   <input type="text" id="name" placeholder="手机号/读者卡号" v-model="username">
-				
 			</div>
 			<div class="pass">
 			   <label for="pass"></label>
 			   <input type="text" id="pass" placeholder="请输入密码" v-model="userpass">
 			</div>
 			<div class="submit">
-			   <button v-on:click="submit" id="btn">登 录</button>
+			  <button id="btn" @click="open()"><a v-bind:href="message">登 录</a></button>
 			   <p class="a_btn">
-				  <a href="">立即注册</a>
+				  <a href="ind1.html">立即注册</a>
 				  <a href="">忘记密码？</a>
 			   </p>
 			</div>
@@ -49,26 +47,25 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		   new Vue({
-		el:".app",
-		data:{
-			username:'',
-			userpass:'',
-		},
-		methods:{
-			submit:function(){
-				if(this.username=="123456"&&this.userpass=="0000"){	
-					window.open("ind1.html")
-				}else{
-					alert(" 账户或密码错误,请重新输入")
+		new Vue({
+			el:".app",
+			data:{
+				message:'',
+				username:'',
+				userpass:''
+			},
+			methods:{
+				open:function(){
+					if(this.username=="123456"&&this.userpass=="0000"){
+							this.message="ind1.html"
+					}else{
+						alert("账户和密码不匹配,请重新输入。")
+					}
 					
 				}
 			}
-		
-					
-			}
-		
-	})
+		})
+	
 	</script>
 </body>
 </html>
