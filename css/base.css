@@ -8,7 +8,7 @@ body,h1,h2,h3,h4,h5,h6,hr,p,dl,dt,dd,ul,ol,li,form,fieldset,legend,button,input,
 	margin: 0;
 	padding: 0
 }
-
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
 h1,h2,h3,h4,h5,h6 {
 	font-weight: 400
 }

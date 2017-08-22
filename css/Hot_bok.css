@@ -50,7 +50,7 @@ body{
 	border-right:1px solid #ccc;
 }
 #scroller li:last-child{
-	border-right:transparent;
+	border-right-color:#fff;
 }
 .book_pic{
 	width:26vw;
@@ -67,6 +67,7 @@ body{
 	margin-top:3vw;
 	text-align:center;
 	white-space:nowrap;
+	text-overflow:ellipsis;
 	overflow:hidden;
 	font-size: 3.6vw;
 }
