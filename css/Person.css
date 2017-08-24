@@ -1,0 +1,270 @@
+@charset="utf-800";
+.top{
+	width:100%;
+	height:50vw;
+	background-image: url("../images/perbg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.t_bg{
+	width:100%;
+	height:27vw;
+	margin-top:5vw ;
+	
+
+}
+#per{
+	position:relative;
+}
+.per_pic{
+	width:20vw;
+	height:20vw;
+	display:block;
+	margin: 0 auto;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms--border-radius: 50%;
+	border:2px solid #dcddda;
+	overflow:hidden;
+}
+.per_pic img{
+	width:100%;
+	height:100%;
+}
+.per_name{
+	text-align: center;
+	font-size:4vw;
+	font-weight: 900;
+	color:#a3775a;
+}
+.Mor{
+	width:5vw;
+	height:5vw;
+	display:block;
+	text-align:center;
+	line-height: 5vw;
+	font-size:6vw;
+	color:#a3775a;
+	position:absolute;
+	top:0;
+	bottom: 0;
+	right: 5vw;
+	margin:auto;
+}
+.S_input{
+	width:100%;
+	height:17vw;
+	margin-top:1vw;
+	background: rgba(0,0,0,.2);
+}
+.S_input .tab{
+	width:32vw;
+	height:15vw;
+	float: left;
+	border-right:1vw solid rgba(255,255,255,.3); 
+	text-align:center;
+	color:#f3f1f1;
+	margin-top:1vw;
+}
+.S_input .tab span{
+	width:32vw;
+	height:10vw;
+	display:block;
+	margin:0 auto;
+	line-height:10vw;
+	font-size:9vw;
+}
+.S_input .tab:last-child{
+	border-right:none;
+}
+.edit{
+	width:95vw;
+	margin:0 auto;
+	height:8vw;
+	line-height:8vw;
+	
+}
+.edit span.del{
+	height:8vw;
+	font-size:3.8vw;
+	color:#888;
+	line-height:8vw;
+	text-align:right;
+	display:block;
+	float:right;
+}
+.edit span.Over{
+	height:8vw;
+	font-size:3.8vw;
+	color:#888;
+	line-height:8vw;
+	text-align:right;
+	display:block;
+	float:left;
+}
+.tab_con{
+	width:100%;
+	background: #fff;
+	margin-bottom:14vw;
+}
+.S_input .tab_c{
+	color:#f03f39;
+}
+.bk_c{
+	width:95vw;
+	margin:2vw auto;
+	overflow:hidden;
+}
+.t_c ul li{
+	width:100%;
+	border-bottom: 1px solid #ccc;
+	overflow:hidden;
+}
+.t_c ul li .bk_c .b_pic{
+	width:26vw;
+	overflow:hidden;
+	float:left;
+}
+.b_pic img{
+	width:100%;
+	height:100%;
+}
+.t_c ul li .bk_c .b_con{
+	width:65vw;
+	padding-left: 4vw;
+	float:left;
+}
+
+.s_con .b_lder{
+	height:5vw;
+	line-height:5vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+.s_con .book_tt{
+	width: 64vw;
+    margin-top: 3vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #888;
+    font-size: 3.2vw;
+}
+.b_tlt{
+	font-size:3.6vw;
+	color:#000;
+	height:8vw;
+	margin-bottom:1vw;
+	line-height:8vw;
+	width:100%;
+	overflow:hidden;
+}
+.dea{
+	width:10vw;
+	height:4vw;
+	float:right;
+	margin-top:2vw;
+	display:inline-block;
+	font-size:3.2vw;
+	text-align:center;
+	line-height:4vw;
+	border:1px solid #ccc;
+	color:#ccc;
+}
+.b_lder{
+	font-size:3.2vw;
+	color:#888;
+	height:8vw;
+	line-height:8vw;
+}
+.b_date{
+	font-size:3.6vw;
+	color:#888;
+	height:7vw;
+	line-height:7vw;
+}
+.contur{
+	width:15vw;
+	height:6.5vw;
+	line-height:6.5vw;
+	text-align:center;
+	display:block;
+	float:right;
+	border:1px solid #f03f39;
+	color:#f03f39;
+	border-radius: 1vw;
+	-webkit-border-radius: 1vw;
+	-o-border-radius: 1vw;
+	-moz-border-radius: 1vw;
+	-ms--border-radius: 1vw;
+
+}
+.t_c .tc_con{
+	width:95vw;
+	margin:0vw auto;
+	overflow:hidden;
+}
+.t_c .tc_con .book_car{
+ 	width: 31.6vw;
+    float: left;
+    margin-bottom: 2vw;
+    border:none;
+    
+}
+.t_c .tc_con .book_car .s_pic{
+	width: 26vw;
+    overflow: hidden;
+    margin: 0 auto;
+    position:relative;
+}
+.s_pic img{
+	width: 100%;
+	height: 100%;
+}
+.s_tit{
+	width: 26vw;
+    height: 5.3vw;
+    margin: 0 auto;
+    line-height: 5.3vw;
+    text-align: center;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.selte{
+	position:absolute;
+	top:1vw;
+	right:1vw;
+	width:4vw;
+	height:4vw;
+}
+
+
+
+
+
+
+
+.deal{
+	width:100%;
+	height:13.3vw;
+	background: #f94d1e;
+	position:fixed;
+	bottom:0vw;
+	z-index:999;
+	text-align:center;
+	line-height:13.3vw;
+	font-size:4vw;
+	color:#eee;
+}
+.deal span{
+	margin-right: 1vw;
+	font-size:4.5vw;
+}
