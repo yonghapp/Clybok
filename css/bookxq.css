@@ -1,6 +1,6 @@
 @charset="utf-8";
 body{
-	background: #f5f5f5;
+	background: #f3f1f1;
 }
 .top{
 	width: 95vw;
@@ -9,12 +9,14 @@ body{
 	margin: 0 auto;
 	padding: 0 2.5vw;
 	background: #fba09c;
+	position:fixed;
+	top:0;
 }
 .top p{
 	width:75vw;
 	float:left;
 	height:13vw;
-	font-size: 4vw;
+	font-size: 6vw;
 	font-weight: 900;
 	color:#fff;
 	text-align: center;
@@ -31,7 +33,7 @@ body{
 }
 .top span:first-child{
 	float:left;
-	font-size: 6vw;
+	font-size: 8vw;
 	
 }
 .top span:last-child{
@@ -40,7 +42,7 @@ body{
 	position:relative;
 }
 .oppen{
-	width:30vw;
+	width:35vw;
 	position:absolute;
 	right:-3vw;
 	top:13vw;
@@ -48,15 +50,15 @@ body{
 	background: rgba(0,0,0,.8);
 }
 .oppen p{
-	height:7vw;
-	line-height:7vw;
+	height:8vw;
+	line-height:8vw;
 	color:#fff;
-	font-size:3vw;
+	font-size:3.6vw;
 	padding:1vw 0;
 }
 .oppen p span{
 	font-size:5vw;
-	margin:0 2.5vw;
+	margin:0 4vw;
 }
 .car{
 	border-bottom:1px solid rgba(0,0,0,.5);
@@ -68,8 +70,11 @@ body{
 	color:#f24a4a;
 }
 .bokxq{
-	width:95vw;
+	width:100%;
 	margin:0 auto;
+	margin-top:15vw;
+	padding:4vw 0;
+	background: #fff;
 }
 .bokxq .b_pic{
 	width:30vw;
@@ -95,19 +100,16 @@ body{
 	text-align:center;
 	margin-top: 1vw;
 	margin-bottom: 4vw;
-	font-size:3.2vw;
 }
 .bookcon{
-	font-size:3.2vw;
+	width:95vw;
 	color:#333;
 	text-indent: 6.4vw;
 	line-height:6vw;
-	width:80vw;
 	margin:0 auto;
 	display:block;
 }
 .morebtn{
-	font-size:3.2vw;
 	color:#1e996e;
 	float:right;
 	margin:0;
@@ -117,19 +119,19 @@ body{
 	margin-top:4vw;
 	padding:3vw 0;
 	background: #fff;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
 }
 .position p{
 	width:75vw;
 	margin:0 auto;
-	line-height:6vw;
+	height:10vw;
+	line-height:10vw;
 	font-size:3.6vw;
 }
 .position .address{
 	width:75vw;
 	margin:0 auto;
-	line-height:6vw;
+	height:10vw;
+	line-height:10vw;
 	font-size:3.6vw;
 	overflow:hidden;
 }
@@ -153,9 +155,9 @@ body{
 	 width:56vw;
 }
 .Btn{
-	width:50vw;
-	height:10vw;
-	line-height:10vw;
+	width:85vw;
+	height:12vw;
+	line-height:12vw;
 	background: #f85050;
 	margin:8vw auto;
 	text-align:center;
@@ -176,14 +178,13 @@ body{
 
 
 .alert{
-	padding:1vw 4vw;
+	padding:2vw 4vw;
 	background: rgba(0,0,0,.7);
 	border-radius: 1vw;
 	-webkit-border-radius: 1vw;
 	-o-border-radius: 1vw;
 	-moz-border-radius: 1vw;
 	color:#fff;
-	font-size:3vw;
 	position: fixed;
 	top:15vw;
 	right:5vw;

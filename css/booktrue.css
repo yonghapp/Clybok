@@ -1,6 +1,6 @@
 @charset="utf-8";
 body{
-	background: #f5f5f5;
+	background: #f3f1f1;
 }
 .top{
 	width: 95vw;
@@ -9,12 +9,14 @@ body{
 	margin: 0 auto;
 	padding: 0 2.5vw;
 	background: #fba09c;
+	position:fixed;
+	top:0;
 }
 .top p{
 	width:75vw;
 	float:left;
 	height:13vw;
-	font-size: 4vw;
+	font-size: 6vw;
 	color:#fff;
 	text-align: center;
 	font-weight: 900;
@@ -25,24 +27,28 @@ body{
 	color:#fff;
 	text-align:center;
 	float:left;
-	font-size: 6vw;
+	font-size: 8vw;
 }
 .top span a{
 	color:#fff;
 	display: block;
 	
 }
+.bk_tit1{
+	margin-top:15vw;
+}
 .bokxq{
 	width:95vw;
 	margin:0 auto;
 	overflow:hidden;
 	padding:3vw 0;
+	
 }
 .bk_tit{
 	text-align:center;
 	height:12vw;
 	line-height:12vw;
-	font-size:4vw;
+	font-size:5vw;
 	color:#656565;
 	background: #fff;
 }
@@ -57,7 +63,7 @@ body{
 	height: 100%;	
 }
 .b_con{
-	float:right;
+	float:left;
 	padding:1vw 0;
 }
 .b_con p{
@@ -99,7 +105,6 @@ body{
 	margin:3vw auto;
 	height:8vw;
 	line-height:8vw;
-	font-size:2.8vw;
 	position:relative;
 	color:#f36610;
 }
@@ -114,20 +119,13 @@ body{
 	margin:auto;
 }
 
-
-
-
-
-
-
-
-
 .Btn{
-	width:60vw;
-	height:10vw;
-	line-height:10vw;
+	width:85vw;
+	height:12vw;
+	line-height:12vw;
 	background: #f85050;
 	margin:0 auto;
+	margin-bottom:4vw;
 	text-align:center;
 	border-radius: 7vw;
 	-webkit-border-radius: 7vw;

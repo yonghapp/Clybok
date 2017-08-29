@@ -43,16 +43,11 @@
 .tou a{
 	width:9vw;
 	height:9vw;
-	line-height: 12vw;
+	line-height: 9vw;
 	display: block;
 	margin:0 auto;
 	overflow:hidden;
-	border:1px solid #fff;
-	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-o-border-radius: 50%;
-	-moz-border-radius: 50%;
-	font-size: 7.5vw;
+	font-size:9vw;
 	color:#fff;
 }
 .tou_r{
