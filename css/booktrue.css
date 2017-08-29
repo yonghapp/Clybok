@@ -1,0 +1,141 @@
+@charset="utf-8";
+body{
+	background: #f5f5f5;
+}
+.top{
+	width: 95vw;
+	height: 13vw;
+	line-height: 13vw;
+	margin: 0 auto;
+	padding: 0 2.5vw;
+	background: #fba09c;
+}
+.top p{
+	width:75vw;
+	float:left;
+	height:13vw;
+	font-size: 4vw;
+	color:#fff;
+	text-align: center;
+	font-weight: 900;
+}
+.top span{
+	width:10vw;
+	height:13vw;
+	color:#fff;
+	text-align:center;
+	float:left;
+	font-size: 6vw;
+}
+.top span a{
+	color:#fff;
+	display: block;
+	
+}
+.bokxq{
+	width:95vw;
+	margin:0 auto;
+	overflow:hidden;
+	padding:3vw 0;
+}
+.bk_tit{
+	text-align:center;
+	height:12vw;
+	line-height:12vw;
+	font-size:4vw;
+	color:#656565;
+	background: #fff;
+}
+.bokxq .b_pic{
+	width:20vw;
+	display:block;
+	float:left;
+	margin:0 5vw;
+}
+.bokxq .b_pic img{
+	width:100%;
+	height: 100%;	
+}
+.b_con{
+	float:right;
+	padding:1vw 0;
+}
+.b_con p{
+	color:#656565;
+	height:8vw;
+	line-height:8vw;
+}
+.bookname{
+	color:#333;
+	font-size:3.6vw;
+}
+.position{
+	width:80vw;
+	margin:0 auto;
+	margin-bottom: 40vw;
+	padding:3vw 0;
+}
+.pb_con p{
+	height:10vw;
+	line-height:10vw;
+	color:#656565;
+}
+.pb_con p span{
+	margin-left: 5vw;
+}
+.pb_con p .sta{
+	
+	font-size:3.6vw;
+	color:#1e996e;
+
+}
+.pb_con p span input{
+	border:none;
+	background: transparent;
+}
+.qian{
+	width:83vw;
+	padding-left:7vw;
+	margin:3vw auto;
+	height:8vw;
+	line-height:8vw;
+	font-size:2.8vw;
+	position:relative;
+	color:#f36610;
+}
+.qian input{
+	width:4vw;
+	height:4vw;
+	display:inline-block;
+	position:absolute;
+	top:0 ;
+	bottom: 0;
+	left:0vw;
+	margin:auto;
+}
+
+
+
+
+
+
+
+
+
+.Btn{
+	width:60vw;
+	height:10vw;
+	line-height:10vw;
+	background: #f85050;
+	margin:0 auto;
+	text-align:center;
+	border-radius: 7vw;
+	-webkit-border-radius: 7vw;
+	-o-border-radius: 7vw;
+	-moz-border-radius: 7vw;
+}
+.Btn a{
+	color:#fff;
+	font-size:6vw;
+	display:block;
+}

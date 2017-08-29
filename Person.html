@@ -55,7 +55,7 @@
 			          		<p class="b_tlt">{{item.title}}</p>
 			          		<p class="b_lder">作者: {{item.leadr}}</p>
 			          		<p class="b_date">借阅日期: {{item.borrow}}</p>
-			          		<p class="b_date">归还日期: {{item.still}} <span class="contur">续 借</span></p>			         
+			          		<p class="b_date">归还日期: {{item.still}} <span class="contur">{{item.state}}</span></p>			         
 			          </div>
 			        </div>
 				</li>
@@ -92,7 +92,7 @@
 					<li class="book_car" v-for="(item, index) in Boookcars"><a href="">
 						<div class="s_pic">
 							<img v-bind:src="item.icon" alt="">
-							<input v-show="show" class="selte"  v-model="item.isCheck" type="checkbox" value="" />
+							<input v-show="show" class="selte"  v-model="item.isCheck" type="checkbox" value=""/>
 						</div>
 						<p class="s_tit">{{item.title}}</p></a>
 						
@@ -146,8 +146,20 @@
 				$(".tab_con .t_c").eq(num).removeClass("none").siblings(".t_c").addClass("none")
 			}
 		})
+		for(var i=0;i<$(".contur").length;i++){
+			if($(".contur").eq(i).text()=="逾期"){
+				$(".contur").eq(i).css({
+					color:"#ccc",
+					border: "1px solid #ccc",
+				})
+			}else{
+				$(".contur").eq(i).css({
+					color:"#f03f39",
+					border: "1px solid #f03f39",
+				})
+			}
+		}
 	})
-
 
 
 	</script>
@@ -190,6 +202,7 @@
 			        leadr:'布莱恩·莫顿',
 			        borrow:'2017-4-5',
 			        still:'2017-8-16',
+			        state:'续借',
 			        icon:'http://103.235.234.147:6788/bookimg/I247.5717746.jpg',
 			      },
 			      {
@@ -198,6 +211,7 @@
 			        leadr:'布莱恩·莫顿',
 			        borrow:'2017-4-5',
 			        still:'2017-8-16',
+			        state:'续借',
 			        icon:'http://103.235.234.147:6788/bookimg/I253.2614.jpg',
 			      },
 			      {
@@ -206,6 +220,7 @@
 			        leadr:'布莱恩·莫顿',
 			        borrow:'2017-4-5',
 			        still:'2017-8-16',
+			        state:'续借',
 			        icon:'http://103.235.234.147:6788/bookimg/I247.5715906.jpg',
 			      },
 			      {
@@ -214,6 +229,7 @@
 			        leadr:'丁庆中',
 			        borrow:'2017-4-5',
 			        still:'2017-8-16',
+			        state:'续借',
 			        icon:'http://103.235.234.147:6788/bookimg/I247.5716289.jpg',
 			      },
 			      {
@@ -222,6 +238,7 @@
 			        leadr:'未知',
 			        borrow:'2017-4-5',
 			        still:'2017-8-16',
+			        state:'续借',
 			        icon:'http://103.235.234.147:6788/bookimg/B848.44495.jpg',
 			      },
 			      {
@@ -230,6 +247,7 @@
 			        leadr:'丁庆中',
 			        borrow:'2017-4-5',
 			        still:'2017-8-16',
+			        state:'逾期',
 			        icon:'http://103.235.234.147:6788/bookimg/I247.52868.jpg',
 			      },
 			      {
@@ -238,6 +256,7 @@
 			        leadr:'未知',
 			        borrow:'2017-4-5',
 			        still:'2017-8-16',
+			        state:'逾期',
 			        icon:'http://103.235.234.147:6788/bookimg/I247.5716790.jpg',
 			      },
 			      {
@@ -246,6 +265,7 @@
 			        leadr:'未知',
 			        borrow:'2017-4-5',
 			        still:'2017-8-16',
+			        state:'逾期',
 			        icon:'http://103.235.234.147:6788/bookimg/I247.5717698.jpg',
 			      },
 			  ],

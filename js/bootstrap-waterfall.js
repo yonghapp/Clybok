@@ -258,7 +258,7 @@
     },
     getToLoadPins: function () {
       var counts = parseInt((this.$container.width() / this.pinWidth), 10)
-      var steps = counts * 3
+      var steps = counts * 4
 
       var $remainPins = this.$pins.map(function () {
         if ($(this).find('img').length > 0 && $(this).data('bootstrap-waterfall-src')) {

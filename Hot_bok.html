@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-		<title>热书推荐</title>
+	<title>热书推荐</title>
 	<meta content="">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/appfoot.css">
@@ -20,10 +20,14 @@
 </head>
 <body onload="loaded()">
 	<div class="Hot_con">
+		<div class="top">
+				<span><a href="javascript:history.go(-1)"><i class="fa fa-angle-left"></i></a></span>
+				<p>热书推荐</p>
+		</div>
 		<div id="wrapper">
 			<div id="scroller" class="scroller">
 				<ul>
-					<li v-for="Hot in Hots"><a href=""> 
+					<li v-for="Hot in Hots"><a href="bookxq.html"> 
 						<p class="book_tit">{{Hot.title}}</p>
 						<p class="book_tea">{{Hot.team}}</p>
 						<div class="book_pic"><img v-bind:src="Hot.icon" alt=""></div></a>
@@ -41,8 +45,8 @@
 				<ul>
 					<li  v-for="HotList in HotLists">
 						<div class="bk_c">
-				          <div class="b_pic">
-				             <image v-bind:src="HotList.icon"></image>
+				          <div class="b_pic"><a href="bookxq.html">
+				             <image v-bind:src="HotList.icon"></a></image>
 				          </div>
 				          <div class="b_con"> 
 				          		<p class="b_tlt">{{HotList.title}}</p>
@@ -276,6 +280,56 @@
 		        </div>
 			</li>
 		</ul>
+		<ul>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/B8213758.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">魅力女人受用一生的处世智慧全集</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i></span>暂无作者信息</p>
+
+		          		<div class="book_tt">
+		          			懂得处世之道的女性能轻松惬意地面对生活，在对待工作、情感、家庭中的各种问题时会游刃有...
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/K2094316.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">一个海外华人讲的中国人的故事</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i></span>暂无作者信息</p>
+
+		          		<div class="book_tt">
+		          			《一个海外华人讲的中国人的故事》一书的作者 李乃义是一个具备现代高科技背景的华人，有当代科 学素养和深厚的文史功底。他意图...
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+			<li>
+				<div class="bk_c">
+		          <div class="b_pic">
+		             <image src="http://103.235.234.147:6788/bookimg/I247.5716792.jpg"></image>
+		          </div>
+		          <div class="b_con"> 
+		          		<p class="b_tlt">爱夏了夏天</p>
+		          		<p class="b_lder"><span><i class="fa fa-user"></i></span>暂无作者信息</p>
+
+		          		<div class="book_tt">
+		          			《爱夏了夏天》是林小小所著的一部长篇小说。《爱夏了夏天》讲述：苏培乐在一场火灾中被...
+		          		</div>
+
+		          </div>
+		        </div>
+			</li>
+		</ul>
 	</script>
    <div class="foot">
 		<ul>
@@ -283,7 +337,7 @@
 				<div><i></i></div>
 				<p>首页</p>
 			</a></li>
-			<li><a href="" target="_blank">
+			<li><a href="message.html" target="_blank">
 				<div><i></i></div>
 				<p>消息</p>
 			</a></li>
@@ -313,12 +367,20 @@ $(document).ready(function(){
 	});
 
 	$(".fin_more").click(function(){
-		$('.waterfall')
-			.data('bootstrap-waterfall-template', $('#waterfall-template').html())
-			.waterfall();
-		$(".fin_more").addClass("none");
+		if($('.waterfall').html()==""){
+			More();
+			$(".fin_more").text("收 起")
+		}else{
+			$('.waterfall').html("");
+			$(".fin_more").text("查看更多")
+		}
+		
 	})
-
+function More(){
+	$('.waterfall')
+		.data('bootstrap-waterfall-template', $('#waterfall-template').html())
+		.waterfall();
+}
 	
 
 	//随机色

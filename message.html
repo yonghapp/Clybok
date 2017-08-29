@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的消息</title>
+	<meta content="">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/appfoot.css">
+	<link rel="stylesheet" href="css/message.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+
+
+</head>
+<body>
+	<div class="bokbg"></div>
+	<div class="b_con">
+		<div class="perbid">
+			<div class="tou">
+				<a href="Person.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+				<span class="line"></span>
+			</div>
+
+			<div class="tou_r">
+				<p>在借书刊: {{allbook}} 本</p>
+				<p>需还书刊: {{hbook}} 本</p>
+				<p>您已累计借书 {{aljbook}} 本, {{ytim}} 次逾期记录</p>
+				<p></p>
+			</div>
+		</div>
+
+		<div class="mesage" v-for="item in Booktts">
+			<div class="m_tou">
+				<span class="m_at">{{item.Boktxt}}</span>
+				<span class="m_line"></span>
+			</div>
+
+			<div class="m_r" >
+				<p class="mr_time">{{item.Boktime}} <span class="mr_a"><i> {{item.Boknum}}</i></span><span class="mr_b"><a href=""><i class="fa fa-angle-right"></i></a></span></p>
+				<p class="m_num">您本次书刊有:</p>
+				<ol type="1" start="1" >
+					<li style="list-style-type: decimal;">{{item.Bok1}}</li>
+					<li style="list-style-type: decimal;">{{item.Bok2}}</li>
+					<li style="list-style-type: decimal;">{{item.Bok3}}</li>
+				</ol>
+				<p class="m_bt">应还书日期:{{item.Bokhtim}} <span class="mb_r"> {{item.Bokmy}} </span></p>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+
+	  <div class="foot">
+		<ul>
+			<li><a href="ind1.html" target="_blank"> 
+				<div><i></i></div>
+				<p>首页</p>
+			</a></li>
+			<li class="act"><a href="message.html" target="_blank">
+				<div><i></i></div>
+				<p>消息</p>
+			</a></li>
+			<li><a href="" target="_blank">
+				<div><i></i></div>
+				<p>馆藏查询</p>
+			</a></li>
+			<li><a href="" target="_blank">
+				<div><i></i></div>
+				<p>清单</p>
+			</a></li>
+			<li><a href="Person.html" target="_blank">
+				<div><i></i></div>
+				<p>我的</p>
+			</a></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+
+	$(function(){
+		
+
+
+	for(var i=0;i< $(".m_at").length;i++){
+			if($(".m_at").eq(i).text()=="借"){
+				$(".m_at").eq(i).css("color","#333")
+				}
+			if($(".m_at").eq(i).text()=="还"){
+				$(".m_at").eq(i).css("color","#0ac75f")
+				}
+			if($(".m_at").eq(i).text()=="逾"){
+				$(".m_at").eq(i).css("color","#e6404b")
+				$(".mb_r").eq(i).css("color","#e6404b")
+				}
+		
+			}
+
+			
+
+
+
+			})
+
+
+
+
+	let data={
+		allbook:"3",
+		hbook:'3',
+		aljbook:'65',
+		ytim:'1',
+		Booktts:[
+			{
+				Boktxt:'借',
+				Boktime:"您于2017-4-23"	,
+				Boknum:"借书 3 本",
+				Bok1:"最后的精灵",
+				Bok2:"皮囊",
+				Bok3:"魔鬼聊天术",
+				Bokhtim:"2017-6-17",
+				Bokmy:"(还期未到)"
+			},
+			{
+				Boktxt:'还',
+				Boktime:"您于2017-4-23"	,
+				Boknum:"还书 3 本",
+				Bok1:"最后的精灵",
+				Bok2:"皮囊",
+				Bok3:"魔鬼聊天术",
+				Bokhtim:"2017-6-17",
+				Bokmy:"(逾期归还)"
+			},
+			{
+				Boktxt:'逾',
+				Boktime:"您还有 3 本书刊需要归还",
+				Bok1:"最后的精灵",
+				Bok2:"皮囊",
+				Bok3:"魔鬼聊天术",
+				Bokhtim:"2017-6-17",
+				Bokmy:"(逾期未还)"
+			},
+			{
+				Boktxt:'逾',
+				Boktime:"您还有 3 本书刊需要归还",
+				Bok1:"最后的精灵",
+				Bok2:"皮囊",
+				Bok3:"魔鬼聊天术",
+				Bokhtim:"2017-6-17",
+				Bokmy:"(逾期未还)"
+			}
+
+		]
+
+	}
+
+	new Vue({
+		el:".b_con",
+		data:data,
+		methods:{
+
+		}
+
+	})
+
+	</script>
+</body>
+</html>

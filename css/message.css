@@ -1,0 +1,157 @@
+@charset="utf-8";
+.bokbg{
+	width:100%;
+	height: 100%;
+	position:fixed;
+	z-index:0;
+	background:url(../images/bokbg.webp) 0 0 no-repeat;
+	background-size:100%;
+}
+.b_con{
+	width:95vw;
+	margin:0 auto;
+	overflow:hidden;
+	padding-bottom:13.3vw;
+}
+.perbid{
+	width:95%;
+	height: 18vw;
+	float:right;
+	position:relative;
+	margin-bottom: 2vw;
+}
+.tou{
+	width:10vw;
+	height:10vw;
+	float: left;
+	color:#fff;
+	display: block;
+	position:absolute;
+	left:-5vw;
+	text-align: center;
+	margin-top: 4vw;
+	margin-right: 5vw;
+	position: relative;
+}
+.line{
+	position:absolute;
+	width:2px;
+	height:10vw;
+	border-left:1px solid #fff;
+	top:8vw;
+}
+.tou a{
+	width:9vw;
+	height:9vw;
+	line-height: 12vw;
+	display: block;
+	margin:0 auto;
+	overflow:hidden;
+	border:1px solid #fff;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	font-size: 7.5vw;
+	color:#fff;
+}
+.tou_r{
+	float:left;
+	width:70vw;
+	margin-top:2vw;
+}
+.tou_r p{
+	line-height:5vw;
+	font-size: 3.6vw;
+	color:#fff;
+}
+.mesage{
+	width:90vw;
+	float:right;
+	position:relative;
+	border-left:1px solid #fff;
+	padding-bottom: 3vw;
+	padding-bottom:5vw;
+}
+.mesage:last-child{
+	border-left:none;
+}
+.m_tou{
+	width:10vw;
+	height:10vw;
+	float: left;
+	text-align: center;
+	margin-right: 3vw;
+	position: absolute;
+	left:-5vw;
+}
+.m_at{
+	width:7vw;
+	height:7vw;
+	display: block;
+	background: #fff;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	margin:0vw auto;
+	line-height:7vw;
+	text-align:center;
+	font-size: 3.6vw;
+}
+.m_r{
+	float:right;
+	width:80vw;
+	margin-left: 8vw;
+	background: #fff;
+
+}
+.m_r p{
+	width:77vw;
+}
+.m_r p,
+.m_r ol{
+	 padding-left: 3vw;
+}
+.m_r ol{
+	 margin-left: 5vw;
+}
+.m_r ol li{
+		color:#666;
+}
+.mr_time{
+	width:100%;
+	height:8vw;
+	line-height:8vw;
+	background: #dc583c;
+	color:#fff;
+	font-size:3.6vw;
+}
+.mr_a{
+	margin-left:4vw;
+}
+.mr_b{
+	float:right;
+	width:8vw;
+	display:block;
+}
+.mr_b a{
+	display:block;
+	text-align:center;
+	font-size:4vw;
+	color:#fff;
+	font-size:3.2vw;
+}
+.m_num{
+	color:#a2a2a2;
+}
+.m_bt{
+	height:8vw;
+	line-height:8vw;
+	color:#a2a2a2;
+	font-size:3.2vw;
+}
+.mb_r{
+	float:right;
+	margin-right:3vw;
+}
