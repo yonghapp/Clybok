@@ -16,7 +16,7 @@ body{
 	width:75vw;
 	float:left;
 	height:13vw;
-	font-size: 6vw;
+	font-size: 5vw;
 	color:#fff;
 	text-align: center;
 	font-weight: 900;
@@ -35,7 +35,7 @@ body{
 	
 }
 .bk_tit1{
-	margin-top:15vw;
+	margin-top:13vw;
 }
 .bokxq{
 	width:95vw;
@@ -121,8 +121,8 @@ body{
 
 .Btn{
 	width:85vw;
-	height:12vw;
-	line-height:12vw;
+	height:10vw;
+	line-height:10vw;
 	background: #f85050;
 	margin:0 auto;
 	margin-bottom:4vw;
@@ -134,6 +134,6 @@ body{
 }
 .Btn a{
 	color:#fff;
-	font-size:6vw;
+	font-size:5vw;
 	display:block;
 }
