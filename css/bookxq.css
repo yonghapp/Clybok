@@ -2,45 +2,6 @@
 body{
 	background: #f3f1f1;
 }
-.top{
-	width: 95vw;
-	height: 13vw;
-	line-height: 13vw;
-	margin: 0 auto;
-	padding: 0 2.5vw;
-	background: #fba09c;
-	position:fixed;
-	top:0;
-}
-.top p{
-	width:75vw;
-	float:left;
-	height:13vw;
-	font-size: 5vw;
-	font-weight: 900;
-	color:#fff;
-	text-align: center;
-}
-.top span{
-	width:10vw;
-	height:13vw;
-	color:#fff;
-	text-align:center;
-}
-.top span a{
-	color:#fff;
-	display: block;
-}
-.top span:first-child{
-	float:left;
-	font-size: 8vw;
-	
-}
-.top span:last-child{
-	float:right;
-	font-size: 5vw;
-	position:relative;
-}
 .oppen{
 	width:35vw;
 	position:fixed;
@@ -70,37 +31,48 @@ body{
 	color:#f24a4a;
 }
 .bokxq{
-	width:100%;
+	width:100vw;
 	margin:0 auto;
 	margin-top:15vw;
 	padding:4vw 0;
 	background: #fff;
 }
+.bxq_con{
+	width:95vw;
+	margin:0 auto;
+	overflow:hidden;
+}
+.b_xq{
+	width:95vw;
+	margin:0 auto;
+}
 .bokxq .b_pic{
 	width:30vw;
-	display:block;
-	margin:5vw auto;
+	float:left;
+	margin-bottom:3vw;
+}
+.bk_xx{
+	padding:3vw 0 5vw;
+	width:60vw;
+	float:right;
+	margin-bottom:3vw;
+		color:#888;
+}
+
+
+.bk_xx p{
+	height:8vw;
+	line-height:8vw;
+}
+.bookname{
+	color:#f85050;
 	margin-bottom:3vw;
 }
 .bokxq .b_pic img{
 	width:100%;
 	height: 100%;	
 }
-.bookname,.bookleader{
-	width:80vw;
-	margin:0 auto;
-	font-size: 3.8vw;
-	color:#333;
-	text-align:center;
-}
-.bookfrom{
-	width:80vw;
-	margin:0 auto;
-	color:#aaa;
-	text-align:center;
-	margin-top: 1vw;
-	margin-bottom: 4vw;
-}
+
 .bookcon{
 	width:95vw;
 	color:#333;

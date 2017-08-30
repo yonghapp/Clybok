@@ -6,6 +6,7 @@
 	<meta content="">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/bookxq.css">
+	<link rel="stylesheet" href="css/top.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
@@ -18,6 +19,7 @@
 	<div class="xq_con">
 		<div class="top">
 			<span><a href="javascript:history.go(-1)"><i class="fa fa-angle-left"></i></a></span>
+
 			<p>{{bookxq.bokname}}</p>
 			<span class="shouc"><i class="fa fa-bars"></i></span>
 
@@ -27,12 +29,20 @@
 				<p class="shou"><span><i class="fa fa-star-o"></i> </span>加入收藏</p>
 			</div>
 		<div class="bokxq">
-			<span class="b_pic"><img v-bind:src="bookxq.bokpic" alt=""></span>
-			<p class="bookname">{{bookxq.bokname}}</p>
-			<p class="bookleader">{{bookxq.leadr}}</p>
-			<p class="bookfrom">出版社: {{bookxq.from}} {{bookxq.time}}</p>
-			<p class="bookcon" v-show="show">{{bookxq.bookCon}}<span class="morebtn" @click="open()">查看更多简介</span></p>
-			<p class="bookcon" v-show="hide">{{bookxq.bookcon}}<span class="morebtn" @click="close()">收起</span></p>
+			<div class="bxq_con">
+				<div class="b_pic"><img v-bind:src="bookxq.bokpic" alt=""></div>
+				<div class="bk_xx">
+					<p class="bookname">{{bookxq.bokname}}</p>
+					<p class="bookleader">作者: {{bookxq.leadr}}</p>
+					<p class="bookfrom">出版社: {{bookxq.from}}</p>
+					<p class="bookfrom">出版时间:  {{bookxq.time}}</p>
+				</div>
+			</div>
+			
+			<div class="b_xq">
+				<p class="bookcon" v-show="show">{{bookxq.bookCon}}<span class="morebtn" @click="open()">查看更多简介</span></p>
+				<p class="bookcon" v-show="hide">{{bookxq.bookcon}}<span class="morebtn" @click="close()">收起</span></p>
+			</div>
 		</div>
 		<div class="position">
 			<p class="num">索取号: &nbsp; &nbsp;{{bookxq.num}}</p>

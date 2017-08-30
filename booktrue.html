@@ -6,11 +6,12 @@
 	<meta content="">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/booktrue.css">
+	<link rel="stylesheet" href="css/top.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-
+    <link href="css/mobiscroll_date.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="js/vue.js"></script>
 </head>
@@ -35,8 +36,8 @@
 			<div class="position">
 				<div class="pb_con">
 					<p>书本状态: <span class="sta">{{bookxq.state}}</span></p>
-					<p>借阅时间: <span class="j_time"><input id="meeting" type="date" value="2014-01-13"/></span></p>
-					<p>还书时间: <span class="h_time"><input id="meeting" type="date" value="2014-01-13"/></span></p>
+					<p>借阅时间: <span class="j_time"></span></p>
+					<p>还书时间: <span><input type="text" name="USER_AGE" id="USER_AGE" readonly class="input" placeholder="请填写还书时间" /></span></p>
 				</div>
 				
 			</div>
@@ -44,7 +45,47 @@
 			<p class="qian"><input type="checkbox" id="charset"><label for="charset">我已阅读<<借阅条款>></label></p>
 			<div class="Btn"><a href="">确 认 借 阅</a></div>
 	</div>
+	<script src="js/mobiscroll_date.js" charset="gb2312"></script> 
+    <script src="js/mobiscroll.js"></script> 
 	<script type="text/javascript">
+		// 借阅时间
+		$(function(){
+			let date=new Date();
+			let year=date.getFullYear();
+			let month=date.getMonth()+1;
+			if(month<10){
+				month="0"+month;
+			}
+			let day=date.getDate();
+			let today=year+" / "+month+" / "+day;
+			$(".j_time").text(today)
+
+			//还书时间
+			var currYear = (new Date()).getFullYear();	
+			var opt={};
+			opt.date = {preset : 'date'};
+			opt.datetime = {preset : 'datetime'};
+			opt.time = {preset : 'time'};
+			opt.default = {
+				theme: 'android-ics light', //皮肤样式
+				display: 'modal', //显示方式 
+				mode: 'scroller', //日期选择模式
+				dateFormat: 'yyyy / mm / dd',
+				lang: 'zh',
+				showNow: true,
+				nowText: "今天",
+				startYear: currYear - 50, //开始年份
+				endYear: currYear + 10 //结束年份
+			};
+
+		$("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
+		
+		})
+		
+
+
+
+
 		new Vue({
 		el:'.xq_con',
 		data:{

@@ -2,38 +2,6 @@
 body{
 	background: #f3f1f1;
 }
-.top{
-	width: 95vw;
-	height: 13vw;
-	line-height: 13vw;
-	margin: 0 auto;
-	padding: 0 2.5vw;
-	background: #fba09c;
-	position:fixed;
-	top:0;
-}
-.top p{
-	width:75vw;
-	float:left;
-	height:13vw;
-	font-size: 5vw;
-	color:#fff;
-	text-align: center;
-	font-weight: 900;
-}
-.top span{
-	width:10vw;
-	height:13vw;
-	color:#fff;
-	text-align:center;
-	float:left;
-	font-size: 8vw;
-}
-.top span a{
-	color:#fff;
-	display: block;
-	
-}
 .bk_tit1{
 	margin-top:13vw;
 }
@@ -48,9 +16,10 @@ body{
 	text-align:center;
 	height:10vw;
 	line-height:10vw;
-	font-size:5vw;
+	font-size:4vw;
 	color:#656565;
 	background: #fff;
+	border:1px solid #f3f1f1;
 }
 .bokxq .b_pic{
 	width:20vw;
@@ -65,14 +34,14 @@ body{
 .b_con{
 	float:left;
 	padding:1vw 0;
+	color:#656565;
 }
 .b_con p{
-	color:#656565;
 	height:8vw;
 	line-height:8vw;
 }
 .bookname{
-	color:#333;
+	color:#f85050;
 	font-size:3.6vw;
 }
 .position{
@@ -88,6 +57,10 @@ body{
 }
 .pb_con p span{
 	margin-left: 5vw;
+	color:#656565;
+}
+.pb_con p span input{
+	color:#656565;
 }
 .pb_con p .sta{
 	
@@ -96,6 +69,7 @@ body{
 
 }
 .pb_con p span input{
+	width:30vw;
 	border:none;
 	background: transparent;
 }
@@ -109,8 +83,6 @@ body{
 	color:#f36610;
 }
 .qian input{
-	width:4vw;
-	height:4vw;
 	display:inline-block;
 	position:absolute;
 	top:0 ;
