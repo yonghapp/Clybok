@@ -47,7 +47,7 @@ body{
 .position{
 	width:80vw;
 	margin:0 auto;
-	margin-bottom: 40vw;
+	margin-bottom: 10vw;
 	padding:3vw 0;
 }
 .pb_con p{
@@ -92,7 +92,7 @@ body{
 }
 
 .Btn{
-	width:85vw;
+	width:50vw;
 	height:10vw;
 	line-height:10vw;
 	background: #f85050;

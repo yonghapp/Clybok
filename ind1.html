@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>朝阳图书馆</title>
-	<meta content="">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/ind1.css">
 	<link rel="stylesheet" href="css/appfoot.css">
@@ -47,7 +46,7 @@
 		<div class="S_input">
 			<div class="Imput">
 				<span><i class="fa fa-search" class="I_l"></i></span>
-				<input type="text" value="我的前半生" id="input">
+				<input type="text" value="我的前半生" id="input" onclick="window.open('Sou_lit.html')">
 				<span><i class="fa fa-camera-retro" class="I_r"></i></span>
 			</div>
 		</div>
@@ -205,8 +204,7 @@
 			this.onfocus=function (){
 				if(this.value==thisVal){
 					this.value="";
-					open("Sou_lit.html")
-					location.reload("Sou_lit.html")
+					// open("Sou_lit.html")
 				}
 								
 			}

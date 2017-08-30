@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>借阅</title>
-	<meta content="">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/booktrue.css">
 	<link rel="stylesheet" href="css/top.css">
@@ -11,10 +10,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <link href="css/mobiscroll_date.css" rel="stylesheet" />
-	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-	<script src="js/mobiscroll_date.js" charset="gb2312"></script> 
-    <script src="js/mobiscroll.js"></script> 
+    <link href="css/mobiscroll.core-2.5.2.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script> 
 	<script type="text/javascript" src="js/vue.js"></script>
 </head>
 <body>
@@ -44,10 +41,11 @@
 				
 			</div>
 
-			<p class="qian"><input type="checkbox" id="charset"><label for="charset">我已阅读<<借阅条款>></label></p>
+			<p class="qian"><input type="checkbox" id="charset"><label for="charset" onclick="window.open('clause.html')">我已阅读<<借阅条款>></label></p>
 			<div class="Btn"><a href="">确 认 借 阅</a></div>
 	</div>
-	
+	<script src="js/mobiscroll.core-2.5.2.js"></script> 
+    <script src="js/mobiscroll.datetime-2.5.1.js"></script>
 	<script type="text/javascript">
 		// 借阅时间
 		$(function(){
@@ -65,26 +63,22 @@
 			var currYear = (new Date()).getFullYear();	
 			var opt={};
 			opt.date = {preset : 'date'};
+			//opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
 			opt.datetime = {preset : 'datetime'};
 			opt.time = {preset : 'time'};
 			opt.default = {
 				theme: 'android-ics light', //皮肤样式
-				display: 'modal', //显示方式 
-				mode: 'scroller', //日期选择模式
-				dateFormat: 'yyyy / mm / dd',
-				lang: 'zh',
-				showNow: true,
-				nowText: "今天",
-				startYear: currYear - 50, //开始年份
-				endYear: currYear + 10 //结束年份
+		        display: 'modal', //显示方式 
+		        mode: 'scroller', //日期选择模式
+				lang:'zh',
+				dateFormat: 'yyyy / mm / dd', // 日期格式
+		        startYear:currYear - 10, //开始年份
+		        endYear:currYear + 10 //结束年份
 			};
 
-		$("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
-		
-		})
-		
+			$("#USER_AGE").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
 
-
+           });
 
 
 		new Vue({
