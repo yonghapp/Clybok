@@ -36,14 +36,34 @@
 				<div class="pb_con">
 					<p>书本状态: <span class="sta">{{bookxq.state}}</span></p>
 					<p>借阅时间: <span class="j_time"></span></p>
-					<p>还书时间: <span><input type="text" name="USER_AGE" id="USER_AGE" readonly class="input" placeholder="请填写还书时间" /></span></p>
+					<p>还书时间: <span class="y_time"><input type="text" name="USER_AGE" id="USER_AGE" readonly class="input" placeholder="请填写还书时间" /><i class="fa fa-pencil-square-o"></i></span></p>
 				</div>
 				
 			</div>
 
-			<p class="qian"><input type="checkbox" id="charset"><label for="charset" onclick="window.open('clause.html')">我已阅读<<借阅条款>></label></p>
+			<p class="qian"><input type="checkbox" id="charset"><label for="charset" id="clace">我已阅读<<借阅条款>></label></p>
 			<div class="Btn"><a href="">确 认 借 阅</a></div>
 	</div>
+		<div class="wrap none">
+			<div class="outer-container">
+				<div class="cale">
+					<div class="cla_con">
+						<span class="close">×</span>
+						<p class="cla_tit">图书借阅制度</p>
+						<div class="cla_txt">
+							<p>1、经本人申请可办理借书卡，凭借书证（卡）借书。</p>
+							<p>2、借书证限本人使用，每次可借1-3本图书，借期不超过10天。到期未看完者，须办理续借手续。</p>
+							<p>3、专业书或专业参考书，借期四个月，到期全部归还。</p>
+							<p>4、工具书和善本书一律不外借，只限在资料室内查阅。</p>
+							<p>5、读者要爱护图书，不得污损、撕毁、批注和丢失，如有上述情况应按制度赔偿。对于违章的读者，在未办妥有关赔偿手续前，暂停其借阅权利。</p>
+							<p>6、借书证限本人或专人使用，应妥善保管，如发生代借、冒借等现象，概由领证人负责。借书证和借书卡丢失，应立即到图书馆挂失，图书馆（室）将集中办理补发手续。</p>
+							<p>7、书刊遗失，尽量购买原版本图书赔偿，否则以书刊价格的1～20倍赔偿。图书馆（室）将所有罚款与赔书款，全部纳入购书经费。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 	<script src="js/mobiscroll.core-2.5.2.js"></script> 
     <script src="js/mobiscroll.datetime-2.5.1.js"></script>
 	<script type="text/javascript">
@@ -78,7 +98,33 @@
 
 			$("#USER_AGE").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
 
+			$("#clace").click(function(){
+				$(".outer-container").animate({
+					width:"80vw",
+					height:"120vw"
+				},200,"swing");
+
+
+				$(".wrap").css({
+					"z-index":"1",
+				     "display":"block",
+				     "position": "fixed",
+				     "top": "0",
+				     "left": "0",
+				     "width":$(window).width()+"px",
+				     "height":$(window).height()+"px",
+				     "background-color":"rgba(0,0,0,0.5)"
+				})
+			});
+			$(".close").click(function(){
+				$(".wrap").hide()
+			})
+				
+			
+
+
            });
+
 
 
 		new Vue({

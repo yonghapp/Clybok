@@ -68,8 +68,19 @@ body{
 	color:#1e996e;
 
 }
+.pb_con p span.y_time{
+	position:relative;
+	color:#f85050;
+	font-size:4vw;
+}
+.pb_con p span.y_time i{
+	position:absolute;
+	top:0.5vw;
+	right: 1vw;
+	z-index: -1;
+}
 .pb_con p span input{
-	width:30vw;
+	width:35vw;
 	border:none;
 	background: transparent;
 }
@@ -109,3 +120,64 @@ body{
 	font-size:5vw;
 	display:block;
 }
+
+.outer-container{
+	width:0vw;
+	height:0vw;
+	position: relative;
+	overflow: hidden;
+	left:0;
+	right:0;
+	top:25vw;
+	margin:auto;
+	border-radius:3vw;
+	-o-border-radius:3vw;
+	-webkit-border-radius:3vw;
+	-moz-border-radius:3vw;
+	box-shadow: 0px 0px 3px 3px #6d6c6c;
+}
+.cale{
+	width:80vw;
+	height:120vw;
+	z-index:2;
+	background: #fff;
+	position:absolute;
+	left:0;
+	right:0;
+	margin:auto;
+	
+	overflow-y: scroll;
+}
+.cale::-webkit-scrollbar {
+		    display: none;
+		}
+.cale .close{
+	position:absolute;
+	font-size:5vw;
+	color:#fa8a47;
+	top:3vw;
+	right:4vw;
+
+}
+ .cla_con{
+    	width: 72vw;
+    	margin:0 auto;
+    	margin-top :4vw;
+    }
+    .cla_tit{
+    	text-align: center;
+    	height: 8vw;
+    	line-height: 8vw;
+    	font-size: 4vw;
+    	color:#333;
+    }
+    .cla_txt{
+    	margin-top :5vw;
+    }
+    .cla_txt p{
+    	line-height: 6vw;
+    	margin-top: 1vw;
+    	color:#888;
+    	font-size: 3.5vw;
+    	text-indent: 7.2vw;
+    }

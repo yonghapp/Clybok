@@ -6,7 +6,7 @@ body{
 	width:35vw;
 	position:fixed;
 	right:-3vw;
-	top:13vw;
+	top:12vw;
 	display:none;
 	background: rgba(0,0,0,.8);
 }
@@ -74,9 +74,8 @@ body{
 }
 
 .bookcon{
-	width:95vw;
+	width:90vw;
 	color:#333;
-	text-indent: 6.4vw;
 	line-height:6vw;
 	margin:0 auto;
 	display:block;
