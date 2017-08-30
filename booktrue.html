@@ -100,9 +100,10 @@
 
 			$("#clace").click(function(){
 				$(".outer-container").animate({
-					width:"80vw",
-					height:"120vw"
-				},200,"swing");
+					"width":"80vw",
+					"height":"120vw",
+					"border-radius":"3vw"
+				},300);
 
 
 				$(".wrap").css({
@@ -113,11 +114,17 @@
 				     "left": "0",
 				     "width":$(window).width()+"px",
 				     "height":$(window).height()+"px",
-				     "background-color":"rgba(0,0,0,0.5)"
+				     "background-color":"rgba(0,0,0,0.6)"
 				})
 			});
 			$(".close").click(function(){
-				$(".wrap").hide()
+				$(".wrap").hide();
+				$(".outer-container").css({
+					"width":"0vw",
+					"height":"0vw",
+				
+				});
+
 			})
 				
 			
