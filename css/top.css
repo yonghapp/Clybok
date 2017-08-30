@@ -1,11 +1,11 @@
 @charset="utf-8";
 .top{
 	width: 95vw;
-	height: 13vw;
-	line-height: 13vw;
+	height: 12vw;
+	line-height: 12vw;
 	margin: 0 auto;
 	padding: 0 2.5vw;
-	background: #fff;
+	background: #f64f5e;
 	position:fixed;
 	z-index:999;
 	top:0;
@@ -13,19 +13,19 @@
 .top p{
 	width:85vw;
 	float:left;
-	height:13vw;
-	font-size: 5.4vw;
-	color:#666;
+	height:12vw;
+	font-size: 5vw;
+	color:#fff;
 	text-align: center;
 }
 .top span{
 	width:5vw;
-	height:13vw;
-	color:#666;
+	height:12vw;
+	color:#fff;
 	text-align:center;
 }
 .top span a{
-	color:#666;
+	color:#fff;
 	display: block;
 }
 .top span:first-child{
