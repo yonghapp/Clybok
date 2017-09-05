@@ -84,5 +84,27 @@
 		</ul>
 
 	</div>
+	<script type="text/javascript">
+	$(function(){
+		$(document).on("scroll",function(){
+			var B_top=$(".top").height();
+		    var top_t=$(".top_tit");
+			var Top=$("body").scrollTop();
+			console.log(Top)
+			if(Top<=B_top-top_t.height()&&Top>top_t.height()){
+				top_t.css("background","rgba(0,0,0,.6)")
+
+			}else if(Top>B_top-top_t.height()){
+				top_t.css("background","#f64f5e");
+			}
+			else{
+				top_t.css("background","transparent");
+			}
+
+      	})
+	})
+		
+
+	</script>
 </body>
 </html>

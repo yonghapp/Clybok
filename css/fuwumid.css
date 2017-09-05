@@ -4,16 +4,16 @@ body{
 }
 .top{
 	width: 100%;
-	height:58.6vw;
+	height:56vw;
 	background:url(../images/fuwumid/fwbg.webp) center center no-repeat;
 	background-size: 100%;
-	position:fixed;
-	top:0;
 }
 .top_tit{
-	width: 90vw;
+	width: 100%;
 	height:11.7vw;
 	margin:0 auto;
+	position:fixed;
+	top:0;
 }
 .top_tit p{
 	width: 90vw;
@@ -46,7 +46,6 @@ body{
 	margin:0 auto;
 	overflow:hidden;
 	padding-bottom: 13vw;
-	margin-top:58.6vw;
 }
 .fw_con ul li{
 	float: left;
