@@ -51,7 +51,7 @@ body{
 	border-right:1px solid #ccc;
 }
 #scroller li:last-child{
-	border-right-color:#fff;
+	border-right-color:transparent;
 }
 .book_pic{
 	width:26vw;

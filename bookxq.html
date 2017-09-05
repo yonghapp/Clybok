@@ -17,12 +17,13 @@
 <body>
 	<div class="xq_con">
 		<div class="top">
-			<span><a href="javascript:history.go(-1)"><i class="fa fa-angle-left"></i></a></span>
+			<span><a href="javascript:history.go(-1)"></a></span>
 
 			<p>{{bookxq.bokname}}</p>
 			<span class="shouc"><i class="fa fa-bars"></i></span>
 
 		</div>
+		<div class="wrop none"></div>
 			<div class="oppen">
 				<p class="car"><span><i class="fa fa-shopping-cart"></i></span>加入书车</p>
 				<p class="shou"><span><i class="fa fa-star-o"></i> </span>加入收藏</p>
@@ -66,29 +67,48 @@
 	</div>
 	<script type="text/javascript">
 	$(function(){
-		 
+		 $(".wrop").css({
+			     "z-index":"-1",
+			     "display":"block",
+			     "position": "fixed",
+			     "top": "0",
+			     "left": "0",
+			     "width":$(window).width()+"px",
+			     "height":$(window).height()+"px",
+			     "background-color":"transparent"
+			 })
 		$(".shouc").click(function(){
 			
-			if($(".oppen").css("display")=="none"){	
-					$(".oppen").slideDown()
+			if($(".oppen").css("display")!="block"){	
+					$(".oppen").slideDown(200)
+					$(".wrop").css("z-index","0")
 						
-			}else if($(".oppen").css("display")=="block"){				
-					$(".oppen").css("display","none")						
+			}else{				
+					$(".oppen").hide()	
 					
-
 			}
 			
-			
+
 		})
+
+		$(".wrop").click(function(){
+					if($(".oppen").css("display")=="block"){					
+						$(".oppen").css("display","none")			
+						$(".wrop").css("z-index","-1")
+					}
+
+				})
 		$(".car").click(function(){
 			$(".alert").stop(true,false).fadeIn().delay(1000).fadeOut(1000);
 			$(".alert").text("收藏成功,快去书车看看吧~")
 			$(".oppen").css("display","none")	
+			$(".wrop").css("z-index","-1")
 		})
 		$(".shou").click(function(){
 			$(".alert").stop(true,false).fadeIn().delay(1000).fadeOut(1000);
 			$(".alert").text("取消收藏")
-			$(".oppen").css("display","none")	
+			$(".oppen").css("display","none")
+			$(".wrop").css("z-index","-1")	
 		})
 
 		function bokcon(){

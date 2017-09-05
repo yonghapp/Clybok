@@ -1,0 +1,112 @@
+@charset="uft-8";
+body{
+	background: #f2f2f2;
+}
+.top{
+	width: 100%;
+	height:58.6vw;
+	background:url(../images/fuwumid/fwbg.webp) center center no-repeat;
+	background-size: 100%;
+	position:fixed;
+	top:0;
+}
+.top_tit{
+	width: 90vw;
+	height:11.7vw;
+	margin:0 auto;
+}
+.top_tit p{
+	width: 90vw;
+	height:11.7vw;
+	margin:0 auto;
+	line-height: 11.7vw;
+	text-align: center;
+	font-size: 4.7vw;
+	color:#fff;
+	position: relative;
+}
+.top_tit p span{
+	display:block;
+	width: 5.3vw;
+	height: 5.3vw;
+	position:absolute;
+	top:3.2vw;
+	left:0;
+	background: url(../images/back.png) center center no-repeat;
+	background-size: 100%;
+
+}
+.top_tit p span a{
+	display:block;
+	width: 100%;
+	height: 100%;
+}
+.fw_con{
+	width: 95vw;
+	margin:0 auto;
+	overflow:hidden;
+	padding-bottom: 13vw;
+	margin-top:58.6vw;
+}
+.fw_con ul li{
+	float: left;
+	width: 36.5vw;
+	height: 23.5vw;
+	margin:5.5vw;
+	background: #fff;
+	border-radius: 2vw;
+	-webkit-border-radius: 2vw;
+	-o-border-radius: 2vw;
+	-moz-border-radius: 2vw;
+}
+.fw_con ul li div{
+	width: 13vw;
+	height: 13vw;
+	margin:0vw auto;
+	margin-top: 3vw;
+
+}
+.fw_con ul li div a{
+	display:block;
+	width: 100%;
+	height: 100%;
+}
+.fw_con ul li p{
+	height: 7vw;
+	line-height:7vw;
+	text-align:center;
+	font-size:3.4vw;
+	color:#666;
+}
+.fw_con ul li:nth-child(1) div{
+	background:url(../images/fuwumid/fw1.png) center center no-repeat;
+	background-size:100%;
+}
+.fw_con ul li:nth-child(2) div{
+	background:url(../images/fuwumid/fw2.png) center center no-repeat;
+	background-size:100%;
+}
+.fw_con ul li:nth-child(3) div{
+	background:url(../images/fuwumid/fw3.png) center center no-repeat;
+	background-size:100%;
+}
+.fw_con ul li:nth-child(4) div{
+	background:url(../images/fuwumid/fw4.png) center center no-repeat;
+	background-size:100%;
+}
+.fw_con ul li:nth-child(5) div{
+	background:url(../images/fuwumid/fw5.png) center center no-repeat;
+	background-size:100%;
+}
+.fw_con ul li:nth-child(6) div{
+	background:url(../images/fuwumid/fw6.png) center center no-repeat;
+	background-size:100%;
+}
+.fw_con ul li:nth-child(7) div{
+	background:url(../images/fuwumid/fw7.png) center center no-repeat;
+	background-size:100%;
+}
+.fw_con ul li:nth-child(8) div{
+	background:url(../images/fuwumid/fw8.png) center center no-repeat;
+	background-size:100%;
+}

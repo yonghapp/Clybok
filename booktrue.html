@@ -19,7 +19,7 @@
 <body>
 	<div class="xq_con">
 			<div class="top">
-				<span><a href="javascript:history.go(-1)"><i class="fa fa-angle-left"></i></a></span>
+				<span><a href="javascript:history.go(-1)"></a></span>
 				<p>借 阅</p>
 			</div>
 			<p class="bk_tit bk_tit1">书本详情</p>
@@ -43,7 +43,7 @@
 				
 			</div>
 
-			<p class="qian"><input type="checkbox" id="charset"><label for="charset" id="clace">我已阅读<<借阅条款>></label></p>
+			<p class="qian"><input type="checkbox" id="charset" checked="checked"><label  >我已阅读 <span id="clace" ><<借阅条款>></span></label></p>
 			<div class="Btn"><a href="">确 认 借 阅</a></div>
 	</div>
 		<div class="wrap none">
@@ -102,11 +102,11 @@
 
 			$("#clace").click(function(){
 					$(".outer-container").stop().animate({
-                        width: "+=70vw",
-                        height: "+=100vw",
-                        top: "-=50vw",
-                        left: "-=35vw"
-                    }, 200);
+                        width: "+=75vw",
+                        height: "+=110vw",
+                        top: "-=55vw",
+                        left: "-=35.5vw"
+                    }, 50);
 
 
 				$(".wrap").css({
@@ -117,16 +117,16 @@
 				     "left": "0",
 				     "width":$(window).width()+"px",
 				     "height":$(window).height()+"px",
-				     "background-color":"rgba(0,0,0,0.6)"
+				     "background-color":"rgba(0,0,0,0.7)"
 				})
 			});
 			$(".close").click(function(){
 				$(".wrap").hide();
 				$(".outer-container").stop().animate({
-                        width: "-=70vw",
-                        height: "-=100vw",
-                        top: "+=50vw",
-                        left: "+=35vw"
+                        width: "-=75vw",
+                        height: "-=110vw",
+                        top: "+=55vw",
+                        left: "+=35.5vw"
                     }, 100);
 
 

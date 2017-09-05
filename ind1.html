@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-	<!-- <script type="text/javascript" src="js/iscroll.js"></script> -->
 	<script type="text/javascript" src="js/vue.js"></script>
 	<script type="text/javascript" src="js/swiper.min.js"></script>
 </head>
@@ -46,7 +45,7 @@
 		<div class="S_input">
 			<div class="Imput">
 				<span><i class="fa fa-search" class="I_l"></i></span>
-				<input type="text" value="我的前半生" id="input" onclick="window.open('Sou_lit.html')">
+				<input type="text" value="我的前半生" id="input" readonly="readonly" onclick="window.open('Sou_lit.html')">
 				<span><i class="fa fa-camera-retro" class="I_r"></i></span>
 			</div>
 		</div>
@@ -54,19 +53,19 @@
 	</div>
 	<div class="nav">
 		<div class="con">
-			<span><img src="images/1.png" alt=""></span>
+			<span><a href=""><img src="images/1.png" alt=""></a></span>
 			<p>图书分类</p>
 		</div>
 		<div class="con">
-			<span><img src="images/2.png" alt=""></span>
+			<span><a href="fuwumid.html"><img src="images/2.png" alt=""></a></span>
 			<p>服务中心</p>
 		</div>
 		<div class="con">
-		    <span><img src="images/3.png" alt=""></span>
+		    <span><a href="newlist.html"><img src="images/3.png" alt=""></a></span>
 			<p>新闻资讯</p>
 		</div>
 		<div class="con">
-			<span><img src="images/4.png" alt=""></span>
+			<span><a href="Lecture.html"><img src="images/4.png" alt=""></a></span>
 			<p>讲座活动</p>
 		</div>
 	</div>
@@ -80,9 +79,9 @@
 			<div class="wrapper">
 				<div class="scroller1">
 					<ul>
-						<li v-for="Hot in Hots"><a href="bookxq.html">
-							<div class="book_pic"><img v-bind:src="Hot.icon" alt=""></div>
-							<p class="book_tit">{{Hot.title}}</p></a>
+						<li v-for="Hot in Hots">
+							<div class="book_pic"><a href="bookxq.html"><img v-bind:src="Hot.icon" alt=""></a></div>
+							<p class="book_tit">{{Hot.title}}</p>
 						</li>									
 					</ul>
 				</div>
@@ -97,9 +96,9 @@
 			<div id="hot_b2" class="hot_b2">
 				<div id="scrol2" class="scrol2">
 					<ul>
-						<li v-for="New in News"><a href="bookxq.html">
-							<div class="book_pic"><img v-bind:src="New.icon" alt=""></div>
-							<p class="book_tit">{{New.title}}</p></a>
+						<li v-for="New in News">
+							<div class="book_pic"><a href="bookxq.html"><img v-bind:src="New.icon" alt=""></a></div>
+							<p class="book_tit">{{New.title}}</p>
 						</li>									
 					</ul>
 				</div>
@@ -114,9 +113,9 @@
 			<div id="hot_b2" class="hot_b2">
 				<div id="scrol2" class="scrol2">
 					<ul>
-						<li v-for="Read in Reads"><a href="bookxq.html">
-							<div class="book_pic"><img v-bind:src="Read.icon" alt=""></div>
-							<p class="book_tit">{{Read.title}}</p></a>
+						<li v-for="Read in Reads">
+							<div class="book_pic"><a href="bookxq.html"><img v-bind:src="Read.icon" alt=""></a></div>
+							<p class="book_tit">{{Read.title}}</p>
 						</li>									
 					</ul>
 				</div>
@@ -126,23 +125,23 @@
 
 	<div class="foot">
 		<ul>
-			<li class="act"><a href="ind1.html" target="_blank">
+			<li class="act"><a href="ind1.html">
 				<div><i></i></div>
 				<p>首页</p>
 			</a></li>
-			<li><a href="message.html" target="_blank">
+			<li><a href="message.html">
 				<div><i></i></div>
 				<p>消息</p>
 			</a></li>
-			<li><a href="" target="_blank">
+			<li><a href="">
 				<div><i></i></div>
 				<p>馆藏查询</p>
 			</a></li>
-			<li><a href="" target="_blank">
+			<li><a href="">
 				<div><i></i></div>
 				<p>清单</p>
 			</a></li>
-			<li><a href="Person.html" target="_blank">
+			<li><a href="Person.html">
 				<div><i></i></div>
 				<p>我的</p>
 			</a></li>
@@ -154,7 +153,7 @@
 			 var S_input=$(".S_input");
 			 var Imput=$(".Imput");
 			 var B_top=$(".top").height();
-				console.log(parseInt(S_input.css('top') ))
+				// console.log(parseInt(S_input.css('top') ))
 
 			$(document).on("scroll",function(){
 				var Top=$("body").scrollTop();
@@ -194,29 +193,6 @@
 	        autoplayDisableOnInteraction : false,
 	        autoplay:3000/*每隔3秒自动播放*/  
          })  
-
-
-        
-
-		var oInput=document.getElementById("input");
-		Element.prototype.holder=function(){
-			var thisVal=this.value;
-			this.onfocus=function (){
-				if(this.value==thisVal){
-					this.value="";
-					// open("Sou_lit.html")
-				}
-								
-			}
-			this.onblur=function (){
-				if(this.value==""){
-					this.value=thisVal;
-				}
-			}
-		}
-		oInput.holder();
-
-
 		
 			var con_len=$("#scroller").find("li");
 			var con_len1=$(".scroller1").find("li");

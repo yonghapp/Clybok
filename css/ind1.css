@@ -131,6 +131,10 @@ body{
 	margin:auto;
 	z-index:1;
 }
+.nav .con span a{
+	display:block;
+
+}
 .nav .con span img{
 	width:100%;
 	height:100%;
@@ -234,6 +238,9 @@ body{
 	width:26vw;
 	overflow:hidden;
 	margin:0 auto;
+}
+.book_pic a{
+	display:block;
 }
 .book_pic img{
 	width:100%;
