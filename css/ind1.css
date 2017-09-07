@@ -206,6 +206,9 @@ body{
 .hot_more{
 	display:block;
 	float:right;
+	
+}
+.hot_more a{
 	color:#7b7b7b;
 }
 .hot_b2,.wrapper {
@@ -241,6 +244,7 @@ body{
 }
 .book_pic a{
 	display:block;
+
 }
 .book_pic img{
 	width:100%;

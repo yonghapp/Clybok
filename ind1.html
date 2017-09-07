@@ -44,16 +44,16 @@
 		</div>
 		<div class="S_input">
 			<div class="Imput">
-				<span><i class="fa fa-search" class="I_l"></i></span>
+				<span class="I_l"><i class="fa fa-search"></i></span>
 				<input type="text" value="我的前半生" id="input" readonly="readonly" onclick="window.open('Sou_lit.html')">
-				<span><i class="fa fa-camera-retro" class="I_r"></i></span>
+				<span  class="I_r"><i class="fa fa-camera-retro"></i></span>
 			</div>
 		</div>
 		
 	</div>
 	<div class="nav">
 		<div class="con">
-			<span><a href=""><img src="images/1.png" alt=""></a></span>
+			<span><a href="fenlei.html"><img src="images/1.png" alt=""></a></span>
 			<p>图书分类</p>
 		</div>
 		<div class="con">
@@ -91,7 +91,7 @@
 		<div class="hot_bk new_bk">
 			<p class="h_t">
 				<span class="hot_tt new_tt"><i></i>新书推荐</span>
-				<span class="hot_more">更多 <i class="fa fa-angle-right"></i></span>
+				<span class="hot_more"><a href="Hot_bok.html" style="display:block;">更多 <i class="fa fa-angle-right"></i></a></span>
 			</p>
 			<div id="hot_b2" class="hot_b2">
 				<div id="scrol2" class="scrol2">
@@ -108,7 +108,7 @@
 		<div class="hot_bk read_bk">
 			<p class="h_t">
 				<span class="hot_tt read_tt"><i></i>读者推荐</span>
-				<span class="hot_more">更多 <i class="fa fa-angle-right"></i></span>
+				<span class="hot_more"><a href="Hot_bok.html" style="display:block;">更多 <i class="fa fa-angle-right"></i></a></span>
 			</p>
 			<div id="hot_b2" class="hot_b2">
 				<div id="scrol2" class="scrol2">
@@ -152,6 +152,9 @@
 	<script type="text/javascript">
 			 var S_input=$(".S_input");
 			 var Imput=$(".Imput");
+			 var I_l=$(".I_l");
+			 var I_r=$(".I_r");
+			 var Impt=$("#input");
 			 var B_top=$(".top").height();
 				// console.log(parseInt(S_input.css('top') ))
 
@@ -159,20 +162,27 @@
 				var Top=$("body").scrollTop();
 				if(Top>=B_top-S_input.height()){
 
-					S_input.css("background","#fff");
-					Imput.css("background","rgba(244,31,14,.3)" )
-						
+					S_input.css({
+					"background": "-webkit-linear-gradient(left, #fdd0a7 , #f8647a)", /* Safari 5.1 - 6.0 */
+				    "background": "-o-linear-gradient(right, #fdd0a7, #f8647a)",/* Opera 11.1 - 12.0 */
+				    "background": "-moz-linear-gradient(right, #fdd0a7, #f8647a)", /* Firefox 3.6 - 15 */
+				    "background": "linear-gradient(to right, #fdd0a7 , #f8647a)",
+					});
+					Imput.css("background","#fff")
+					I_l.css("color","#666")
+					I_r.css("color","#666")
+					Impt.css("color","#666")
 					  
 					Imput.css({
 						height:"7.8vw",
 						width:"79vw"
 					})
-
-
-					
 				}else{
 					S_input.css("background","transparent");
 					Imput.css("background","rgba(228,226,221,.7)")
+					I_l.css("color","#fff")
+					I_r.css("color","#fff")
+					Impt.css("color","#fff")
 					Imput.css({
 						height:"8vw",
 						width:"80vw"

@@ -18,105 +18,93 @@
 	<div class="xq_con">
 		<div class="top">
 			<span><a href="javascript:history.go(-1)"></a></span>
-
 			<p>{{bookxq.bokname}}</p>
-			<span class="shouc"><i class="fa fa-bars"></i></span>
+		</div>
+		<div class="windw">
+			<span class="shoucang"></span>
+			<div class="wincon">
+				<div class="Allcon">
+					<div class="bokxq">
+						<div class="bxq_con">
+							<div class="b_pic"><img v-bind:src="bookxq.bokpic" alt=""></div>
+							<div class="bk_xx">
+								<p class="bookname">{{bookxq.bokname}}</p>
+								<p class="bookleader">{{bookxq.leadr}}</p>
+								<p class="bookfrom">出版社 : &nbsp;{{bookxq.from}} &nbsp;{{bookxq.time}}</p>
+								<p class="bookfrom"></p>
+							</div>
+						</div>
+						
+						<div class="b_xq">
+							<p class="bookcon" v-show="hide">{{bookxq.bookCon}}<span class="morebtn" @click="open()">查看更多简介</span></p>
+							<p class="bookcon" v-show="show">{{bookxq.bookcon}}<span class="morebtn" @click="close()">收起</span></p>
+						</div>
+					</div>
+					<div class="u_ul">
+						<p class="att">馆藏地址</p>
+						<p>所有评论</p>
+					</div>
+					<div class="c_con">
+						<div class="position">
+							<p class="num">索取号 : &nbsp; <span>{{bookxq.num}}</span></p>
+							<p class="state">图书状态 : &nbsp; <span class="sta">{{bookxq.state}}</span></p>
+							<div class="address"><span class="opt">架位导航 :&nbsp;</span>
+								<div class="sda">
+									<p>{{bookxq.position}}</p>
+								</div>
+							</div>
+							<p class="nuber">条形码号 :&nbsp; <span>{{bookxq.nuber}}</span></p>
+							<p class="score">评分 :
+								<span class="star">
+									<span><i class="fa fa-star"></i></span>
+									<span><i class="fa fa-star"></i></span>
+									<span><i class="fa fa-star"></i></span>
+									<span><i class="fa fa-star"></i></span>
+									<span><i class="fa fa-star"></i></span>
+								</span>
+							</p>
+						</div>
+						<div class="position pos2 none">
+							<p class="kong">暂时还没有评论~</p>
 
-		</div>
-		<div class="wrop none"></div>
-			<div class="oppen">
-				<p class="car"><span><i class="fa fa-shopping-cart"></i></span>加入书车</p>
-				<p class="shou"><span><i class="fa fa-star-o"></i> </span>加入收藏</p>
-			</div>
-		<div class="bokxq">
-			<div class="bxq_con">
-				<div class="b_pic"><img v-bind:src="bookxq.bokpic" alt=""></div>
-				<div class="bk_xx">
-					<p class="bookname">{{bookxq.bokname}}</p>
-					<p class="bookleader">作者: {{bookxq.leadr}}</p>
-					<p class="bookfrom">出版社: {{bookxq.from}}</p>
-					<p class="bookfrom">出版时间:  {{bookxq.time}}</p>
+						</div>
+
+					</div>
+					
+					<div class="Btn"><a href="booktrue.html">借 阅</a></div>
 				</div>
 			</div>
-			
-			<div class="b_xq">
-				<p class="bookcon" v-show="show">{{bookxq.bookCon}}<span class="morebtn" @click="open()">查看更多简介</span></p>
-				<p class="bookcon" v-show="hide">{{bookxq.bookcon}}<span class="morebtn" @click="close()">收起</span></p>
-			</div>
 		</div>
-		<div class="position">
-			<p class="num">索取号: &nbsp; &nbsp;{{bookxq.num}}</p>
-			<p class="state">单册状态: &nbsp; &nbsp;<span class="sta">{{bookxq.state}}</span></p>
-			<div class="address"><span class="opt">位置: </span>&nbsp; &nbsp;
-				<div class="sda">
-					<p>{{bookxq.position}}</p>
-				</div>
-			</div>
-			<p class="nuber">条码号: &nbsp; &nbsp;{{bookxq.nuber}}</p>
-			<p class="score">评分: &nbsp; &nbsp;
-				<span class="star">
-					<span><i class="fa fa-star"></i></span>
-					<span><i class="fa fa-star"></i></span>
-					<span><i class="fa fa-star"></i></span>
-					<span><i class="fa fa-star"></i></span>
-					<span><i class="fa fa-star"></i></span>
-				</span></p>
-		</div>
-		<div class="Btn"><a href="booktrue.html">借 阅</a></div>
-		<span class="alert none"></span>
 	</div>
 	<script type="text/javascript">
 	$(function(){
-		 $(".wrop").css({
-			     "z-index":"-1",
-			     "display":"block",
-			     "position": "fixed",
-			     "top": "0",
-			     "left": "0",
-			     "width":$(window).width()+"px",
-			     "height":$(window).height()+"px",
-			     "background-color":"transparent"
-			 })
-		$(".shouc").click(function(){
-			
-			if($(".oppen").css("display")!="block"){	
-					$(".oppen").slideDown(200)
-					$(".wrop").css("z-index","0")
-						
-			}else{				
-					$(".oppen").hide()	
-					
+		let Height=$(window).height();
+		let DelH=$(".top").height()+40
+
+		$(".windw").css("height",Height-DelH+"px");
+		$(".wincon").css("height",Height-DelH+"px");
+
+		$(".u_ul p").click(function(){
+			$(this).addClass("att").siblings().removeClass("att")
+			let num=$(this).index();
+			$(".c_con .position").eq(num).removeClass("none").siblings().addClass("none")
+		})
+
+		//收藏
+		$(".shoucang").click(function(){
+			if(!$(this).hasClass("acc")){
+				$(this).addClass("acc")
+			}else{
+				$(this).removeClass("acc")
 			}
-			
-
-		})
-
-		$(".wrop").click(function(){
-					if($(".oppen").css("display")=="block"){					
-						$(".oppen").css("display","none")			
-						$(".wrop").css("z-index","-1")
-					}
-
-				})
-		$(".car").click(function(){
-			$(".alert").stop(true,false).fadeIn().delay(1000).fadeOut(1000);
-			$(".alert").text("收藏成功,快去书车看看吧~")
-			$(".oppen").css("display","none")	
-			$(".wrop").css("z-index","-1")
-		})
-		$(".shou").click(function(){
-			$(".alert").stop(true,false).fadeIn().delay(1000).fadeOut(1000);
-			$(".alert").text("取消收藏")
-			$(".oppen").css("display","none")
-			$(".wrop").css("z-index","-1")	
 		})
 
 		function bokcon(){
 			if($(".sta").text()=='在馆,可外借'){
-				$(".sta").css("color","#1e996e")				
+				$(".sta").css("color","#f83553")				
 			}
 			if($(".sta").text()=="不在馆,已借出"){
-				$(".sta").css("color","#fa3308")
+				$(".sta").css("color","#a7a7a7")
 			}
 		}
 		function Star(){
@@ -125,55 +113,28 @@
 				st.eq(i).css("color","#f44d12")
 			}	
 		}
-
 		bokcon();
-		Star();
-			
-
-
-
-	 
+		Star();	 
 	})
-	
+	</script>
+	<script type="text/javascript" src="js/json.js"></script>
+	<script type="text/javascript">
 
+		new Vue({
+			el:'.xq_con',
+			data:data,
+			methods:{
+				open:function(){
+					this.show=true,
+					this.hide=false
+				},
+				close:function(){
+					this.show=false,
+					this.hide=true
+				}
 
-	new Vue({
-		el:'.xq_con',
-		data:{
-			bookxq:{
-				bokname:'河对岸的窗',
-				bokpic:'http://103.235.234.147:6788/bookimg/I712.453159.jpg',
-				leadr:'[美]布莱恩●莫顿',
-				from:'二十一世纪出版社',
-				time:'(2014-5-1)',
-				team:'哲学',
-				num:'I712.45/3159',
-				state:'在馆,可外借',
-				position:'预借库 C 库09巷左侧03架06层',
-				nuber:'052T001846041',
-				bookCon:'《河对岸的窗》中诺拉和埃希克分手已经五年了。而这一夜，埃希克在电话听筒的静默中认出了诺拉三十五岁的诺拉，始终逃避着心之所欲。',
-				bookcon:'《河对岸的窗》中诺拉和埃希克分手已经五年了。而这一夜，埃希克在电话听筒的静默中认出了诺拉…… 三十五岁的诺拉，始终逃避着心之所欲。她有写作才能，却害怕踏上作家之路，因为一旦提笔，她就成了恶魔：他人极欲隐藏的秘密与最不想面对的自我，都在她敏锐灵感的挖掘下无处遁形，并都成为她写作的养分。四十岁的埃希克，将全部的热情都投注在摄影上，但他渴求的艺术成就却迟……'
-			},
-			
-			show:true,
-			hide:false,
-
-
-
-		},
-		methods:{
-			open:function(){
-				this.show=false,
-				this.hide=true
-			},
-			close:function(){
-				this.show=true,
-				this.hide=false
 			}
-
-		}
-	})
-
+		})
 
 	</script>
 </body>

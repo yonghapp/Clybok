@@ -77,7 +77,11 @@
 				top_t.css("background","rgba(0,0,0,.6)")
 
 			}else if(Top>B_top-top_t.height()){
-				top_t.css("background","#f64f5e");
+				top_t.css({
+					"background": "-webkit-linear-gradient(left, #fdd0a7 , #f8647a)", /* Safari 5.1 - 6.0 */
+				    "background": "-o-linear-gradient(right, #fdd0a7, #f8647a)",/* Opera 11.1 - 12.0 */
+				    "background": "-moz-linear-gradient(right, #fdd0a7, #f8647a)", /* Firefox 3.6 - 15 */
+				    "background": "linear-gradient(to right, #fdd0a7 , #f8647a)",});
 			}
 			else{
 				top_t.css("background","transparent");

@@ -1,0 +1,91 @@
+@charset="utf-8";
+body{
+	background: #f3f1f1;
+}
+.shouc a{
+	display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/search.png) center center no-repeat;
+    background-size: 100%;
+}
+.fl_C{
+	width:100%;
+	margin-top: 12vw;
+	overflow: hidden;
+	padding-top: 5px;
+}
+.outer-container,.content{
+	width:24.7vw;
+}
+.outer-container{
+	position: relative;
+ 	overflow: hidden;
+ 	float:left;
+}
+
+.inner-container{
+	position: absolute; 
+	left: 0;
+	top:0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+}
+.inner-container::-webkit-scrollbar {
+		    display: none;
+}
+
+ .cuter-container{
+	width: 75.3vw;
+	overflow: hidden;
+	background: #fff;
+
+}
+.cnner-container{
+	width: 90.3vw;
+	overflow-y: auto;	
+}
+.ccontent::-webkit-scrollbar {
+	display: none;
+}
+
+
+.inner-container ul li{
+	height:10vw;
+	line-height: 10vw;
+	font-size: 4vw;
+	color:#999;
+	text-indent: 3vw;
+	border-bottom: 1px solid #eae8e8;
+	position:relative;
+	top:0;
+}
+.inner-container ul li.n_act{
+
+	background: #fff;
+	color:#f97581;
+}
+.inner-container ul li:last-child{
+	border-bottom:none;
+}
+.cnner-container ul li{
+	width:20vw;
+	margin: 2.5vw;
+	float:left;
+
+}
+.c_pic{
+	width:20vw;
+}
+.c_pic img{
+	width:100%;
+}
+.book_tit{
+	height:8vw;
+	line-height:8vw;
+	text-indent:center;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}

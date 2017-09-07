@@ -28,7 +28,7 @@
 			   <input type="text" id="pass" placeholder="请输入密码" v-model="userpass">
 			</div>
 			<div class="submit">
-			  <button id="btn" @click="open()"><a v-bind:href="message">登 录</a></button>
+			  <button id="btn" @click="open()"><a v-bind:href="mess">登 录</a></button>
 			   <p class="a_btn">
 				  <a href="ind1.html">立即注册</a>
 				  <a href="">忘记密码？</a>
@@ -45,18 +45,15 @@
 				
 		</div>
 	</div>
+	<script type="text/javascript" src="js/json.js"></script>
 	<script type="text/javascript">
 		new Vue({
 			el:".app",
-			data:{
-				message:'',
-				username:'',
-				userpass:''
-			},
+			data:data,
 			methods:{
 				open:function(){
 					if(this.username=="123456"&&this.userpass=="0000"){
-							this.message="ind1.html"
+							this.mess="ind1.html"
 					}else{
 						alert("账户和密码不匹配,请重新输入。")
 					}

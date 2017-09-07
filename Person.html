@@ -18,93 +18,42 @@
 <div class="C_on">
 	<div class="top">
 		<div class="t_bg" >
-			<div id="per">
-				<span class="per_pic"><img v-bind:src="perPic" alt=""></span>
-				<a href="perMidd.html" class="Mor"><i class="fa fa-angle-right"></i></a>
+			<div class="top_tit">
+				<p><span><a href="javascript:history.go(-1)"></a></span>我的预借<span><a href="perMidd.html" class="Mor"></a></span></p>
 			</div>
-			
-			<p class="per_name">Lily</p>
+
 		</div>
-		<div class="S_input" id="S_input">
-			<div class="tab tab_c">
-				<span><i class="fa fa-book" aria-hidden="true"></i></span>
-				<p>我的借阅</p>
-			</div>
-			<div class="tab">
-				<span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-				<p>我的收藏</p>
-			</div>
-			<div class="tab">
-				<span><i class="fa fa-stack-overflow" aria-hidden="true"></i></span>
-				<p>我的书车</p>
-			</div>
-		</div>
-	</div>
-	
-	<div class="tab_con">
-		
-		<div class="t_c">
-			<ul>
-				<li v-for="item in Hots">
-					<div class="bk_c">
-			          <div class="b_pic">
-			             <image v-bind:src="item.icon"></image>
-			          </div>
-			          <div class="b_con"> 
-			          		<p class="b_tlt">{{item.title}}</p>
-			          		<p class="b_lder">作者: {{item.leadr}}</p>
-			          		<p class="b_date">借阅日期: {{item.borrow}}</p>
-			          		<p class="b_date">归还日期: {{item.still}} <span class="contur">{{item.state}}</span></p>			         
-			          </div>
-			        </div>
-				</li>
-			</ul>
-		</div>
-		<div class="t_c none">
-			<div class="tc_con">
-				<ul>
-					<li  v-for="(item, index) in HotLists">
-						<div class="bk_c">
-				          <div class="b_pic">
-				             <image v-bind:src="item.icon"></image>
-				          </div>
-				          <div class="b_con s_con"> 
-				          		<p class="b_tlt">{{item.title}} <span v-on:click="del(index)" class="dea">移除</span></p>
-				          		<p class="b_lder">作者: {{item.leadr}}</p>
-				          		<p class="b_lder">出版社: {{item.team}}</p>
-				          		<div class="book_tt">内容简介:{{item.con}}</div>
-				          </div>
-				        </div>
-					</li>
-				</ul>
-			</div>		
-		</div>
-		<div class="t_c none">
-			<p  class="edit" >
-				<span class="Over" v-show="show" v-on:click="Over()">完成</span>
-				<span v-on:click="edit()" class="del" v-show="hide">编辑</span>
-				<span v-on:click="allselet()" class="del" v-show="show">全选</span>
-			</p>
-			<p v-show="bokcar" style="text-align:center; font-size:4vw;color:#ccc;">书车里面空空如也......</p>
-			<div class="tc_con">
-				<ul>
-					<li class="book_car" v-for="(item, index) in Boookcars"><a href="">
-						<div class="s_pic">
-							<img v-bind:src="item.icon" alt="">
-							<input v-show="show" class="selte"  v-model="item.isCheck" type="checkbox" value=""/>
-						</div>
-						<p class="s_tit">{{item.title}}</p></a>
-						
-					</li>
-				</ul>
-			</div>
-			<div v-on:click="Delat()" class="deal" v-show="show" id="deal" >
-				<span><i class="fa fa-trash-o"></i> </span>
-				 删除
-			</div>
+		<div class="per">
+				<div class="peop">
+					<div class="p_pic"><img v-bind:src="perPic" alt=""></div>
+					<p v-text="pername"></p>
+				</div>
+				<div class="p_con">
+					<div>
+						<p>借阅历史</p>
+						<p v-text="booknum"></p>
+					</div>
+					<div>
+						<p>收藏书籍</p>
+						<p v-text="bookColl"></p>
+					</div>
+					<div>
+						<p>在读书籍</p>
+						<p v-text="bookread"></p>
+					</div>
+				</div>
+
+
 		</div>
 	</div>
-	
+
+	<div class="B_con">
+		<P>我的订单<span><i class="fa fa-angle-right"></i></span></P>
+		<P>地址管理<span><i class="fa fa-angle-right"></i></span></P>
+		<P>常见问题<span><i class="fa fa-angle-right"></i></span></P>
+		<P>在线客服<span><i class="fa fa-angle-right"></i></span></P>
+
+	</div>
 	<div class="foot" v-show="f_hide">
 		<ul>
 			<li><a href="ind1.html">
@@ -131,128 +80,94 @@
 
 	</div>
 </div>
-	<script type="text/javascript">
-	$(function(){
-
-		$("#S_input").on("click",".tab",function(){
-		 if($(".foot").css("display")=='none'){ // 判断 .t_c 是否操作完 
-				$(this).addClass("").siblings(".tab").removeClass("");
-				var num=$(this).index();
-				$(".tab_con .t_c").eq(num).removeClass("").siblings(".t_c").addClass("")
-			}else{
-				$(this).addClass("tab_c").siblings(".tab").removeClass("tab_c");
-				var num=$(this).index();
-				$(".tab_con .t_c").eq(num).removeClass("none").siblings(".t_c").addClass("none")
-			}
-		})
-		for(var i=0;i<$(".contur").length;i++){
-			if($(".contur").eq(i).text()=="逾期"){
-				$(".contur").eq(i).css({
-					color:"#ccc",
-					border: "1px solid #ccc",
-				})
-			}else{
-				$(".contur").click(function(){
-					open("booktrue.html")
-				})
-				$(".contur").eq(i).css({
-					color:"#f03f39",
-					border: "1px solid #f03f39",
-				})
-			}
-		}
-	})
-
-
-	</script>
 	<script type="text/javascript" src="js/json.js"></script>
 	<script type="text/javascript">
 	    new Vue({
 		el:".C_on",
 		data:data,
-		methods:{
-			del:function(n){
-				this.HotLists.splice(n,1)
-				// console.log(n)
-			},
-			edit:function(){
-				if(this.show==false){
-					this.show=true
-					this.detal="全选"
-					this.hide=false
-					this.f_hide=false
+		// methods:{
+		// 	del:function(n){
+		// 		this.HotLists.splice(n,1)
+		// 		// console.log(n)
+		// 	},
+		// 	edit:function(){
+		// 		if(this.show==false){
+		// 			this.show=true
+		// 			this.detal="全选"
+		// 			this.hide=false
+		// 			this.f_hide=false
 					
-				}
-			},
-			allselet:function(event){
-	        this.Boookcars.forEach(item => {
-	            item.isCheck = true
+		// 		}
+		// 	},
+		// 	allselet:function(event){
+	 //        this.Boookcars.forEach(item => {
+	 //            item.isCheck = true
 	            
-	        	})
-			},
-			Over:function(){
-				this.show=false
-				this.detal="编辑"
-				this.hide=true
-				this.f_hide=true
-				for(let i=0;i<this.Boookcars.length;i++){
+	 //        	})
+		// 	},
+		// 	Over:function(){
+		// 		this.show=false
+		// 		this.detal="编辑"
+		// 		this.hide=true
+		// 		this.f_hide=true
+		// 		for(let i=0;i<this.Boookcars.length;i++){
 
-					if(this.Boookcars[i].isCheck==true){
+		// 			if(this.Boookcars[i].isCheck==true){
 						
-						this.Boookcars[i].isCheck=false
+		// 				this.Boookcars[i].isCheck=false
 
-					}
-				}
-			},
-			Delat:function(){
+		// 			}
+		// 		}
+		// 	},
+		// 	Delat:function(){
 
-				// this.show=false
-				// this.detal="编辑"
-				// this.hide=true
+		// 		// this.show=false
+		// 		// this.detal="编辑"
+		// 		// this.hide=true
 
-				// 选中的 元素
-				for(let i=0;i<this.Boookcars.length;i++){
+		// 		// 选中的 元素
+		// 		for(let i=0;i<this.Boookcars.length;i++){
 
-					if(this.Boookcars[i].isCheck==true){
+		// 			if(this.Boookcars[i].isCheck==true){
 						
-						this.arr.push(this.Boookcars[i])
+		// 				this.arr.push(this.Boookcars[i])
 
-					}
-				}
-				for(let i=0;i<this.Boookcars.length;i++){
-					for(let j=0;j<this.arr.length;j++){
-							if(this.Boookcars[i]==this.arr[j]){
-								this.Boookcars.splice(i,1)
-							}
-						}
+		// 			}
+		// 		}
+		// 		for(let i=0;i<this.Boookcars.length;i++){
+		// 			for(let j=0;j<this.arr.length;j++){
+		// 					if(this.Boookcars[i]==this.arr[j]){
+		// 						this.Boookcars.splice(i,1)
+		// 					}
+		// 				}
 					
-				}
+		// 		}
 
-				if(this.Boookcars.length<=0){
-					this.show=false
-					this.hide=false
-					this.f_hide=true
-					this.bokcar=true
+		// 		if(this.Boookcars.length<=0){
+		// 			this.show=false
+		// 			this.hide=false
+		// 			this.f_hide=true
+		// 			this.bokcar=true
 					
-				}else{
-				  this.bokcar=false
-					if(this.arr.length<=0){
-					this.show=true
-					this.detal="全选"
-					this.hide=false
-					this.f_hide=false
-				}else{
-					this.show=false
-					this.detal="编辑"
-					this.hide=true
-					this.f_hide=true
-				}
-				}
+		// 		}else{
+		// 		  this.bokcar=false
+		// 			if(this.arr.length<=0){
+		// 			this.show=true
+		// 			this.detal="全选"
+		// 			this.hide=false
+		// 			this.f_hide=false
+		// 		}else{
+		// 			this.show=false
+		// 			this.detal="编辑"
+		// 			this.hide=true
+		// 			this.f_hide=true
+		// 		}
+		// 		}
 			
-			},
+		// 	},
 
 
-		}
+		// }
 
 	})
 

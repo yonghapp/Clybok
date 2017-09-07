@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图书分类</title>
+	<meta content="">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/fenlei.css">
+	<link rel="stylesheet" href="css/top.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div class="f_con">
+		<div class="top">
+			<span><a href="javascript:history.go(-1)"></a></span>
+			<p>图书分类</p>
+			<span class="shouc"><a href="Sou_lit.html"></a></span>
+
+		</div>
+		<div class="fl_C">
+			<div class="outer-container">
+				<div class="inner-container">
+					<ul class="content">
+						<li class="n_act">畅销书推荐</li>
+						<li>马克思主义</li>
+						<li>哲学</li>
+						<li>社会科学</li>
+						<li>政治、法律</li>
+						<li>经济</li>
+						<li>文化、科学</li>
+						<li>语言、文字</li>
+						<li>文学</li>
+						<li>艺术</li>
+						<li>历史、地理</li>
+						<li>自然科学</li>
+						<li>数理科学</li>
+						<li>天文学</li>
+						<li>生物科学</li>
+						<li>医学、卫生</li>
+						<li>农业科学</li>
+						<li>工业技术</li>
+						<li>交通运输</li>
+						<li>航空、航天</li>
+						<li>环境科学</li>
+						<li>综合性图书</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cuter-container">
+				<div class="cnner-container">
+					<ul class="ccontent">
+						<li v-for="item in Hots">
+							<div class="c_pic"><img v-bind:src="item.icon" alt=""></div>
+							<p class="book_tit">{{item.title}}</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		
+
+$(function(){
+	let Height=$(window).height();
+		let DelH=$(".top").height()
+		// console.log(DelH)
+
+		$(".outer-container").css("height",Height-DelH+"px");
+		$(".content").css("height",Height-DelH+"px");
+
+		$(".cuter-container").css("height",Height-DelH+"px");
+		$(".cnner-container").css("height",Height-DelH+"px");
+
+
+
+		$(".content li").click(function(){
+			$(this).addClass("n_act").siblings().removeClass("n_act")
+			let num=$(this).index();
+			let Heig=$(".content li").height()
+			$(".inner-container").animate({
+				scrollTop:num*(Heig+1)
+			});
+
+
+
+
+		})
+
+})
+		
+
+	</script>
+	<script type="text/javascript" src="js/json.js"></script>
+	<script type="text/javascript">
+
+	    new Vue({
+		el:".f_con",
+		data:data,
+		methods:{
+
+		}
+	})
+
+	</script>
+</body>
+</html>

@@ -2,135 +2,153 @@
 body{
 	background: #f3f1f1;
 }
-.oppen{
-	width:35vw;
-	position:fixed;
-	right:-3vw;
-	top:12vw;
-	z-index:0;
-	display:none;
-	background: rgba(0,0,0,.8);
+.windw{
+	width:90vw;
+	margin:3vw auto;
+	overflow: hidden;
+	background: #fff;
+	margin-top:16vw;
+	box-shadow: 0 4px 1px 1px #efb0b9;
+	border-radius:3vw;
+	-webkit-border-radius:3vw;
+	-o-border-radius:3vw;
+	-moz-border-radius:3vw;
+	position:relative;
 }
-.oppen p{
-	height:8vw;
-	line-height:8vw;
-	color:#fff;
-	font-size:3.6vw;
-	padding:1vw 0;
+.shoucang{
+	position:absolute;
+	right:4vw;
+	top:4vw;
+	width:7vw;
+	height:7vw;
+	display:block;
+	background:url(../images/newxq/2.png) no-repeat center center;
+	background-size: 100%
 }
-.oppen p span{
-	font-size:5vw;
-	margin:0 4vw;
+.acc{
+	background:url(../images/newxq/22.png) no-repeat center center;
+	background-size: 100%
 }
-.car{
-	border-bottom:1px solid rgba(0,0,0,.5);
+.wincon{
+	width: 95vw;
+	overflow-y: auto;
 }
-.car span{
-	color:#f7782b;
+.Allcon::-webkit-scrollbar {
+	display: none;
 }
-.shou span{
-	color:#f24a4a;
-}
-.bokxq{
-	width:100vw;
-	margin:0 auto;
-	margin-top:13vw;
-	padding:4vw 0;
+
+.Allcon{
+	width:90vw;
 	background: #fff;
 }
-.bxq_con{
-	width:95vw;
+.bokxq{
+	width:80vw;
 	margin:0 auto;
-	overflow:hidden;
+	background: #fff;
 }
-.b_xq{
-	width:95vw;
-	margin:0 auto;
-}
-.bokxq .b_pic{
+.b_pic{
 	width:30vw;
-	float:left;
-	margin-bottom:3vw;
+	margin:3vw auto;
+	margin-top:8vw;
+}
+.b_pic img{
+	width:100%;
 }
 .bk_xx{
-	padding:3vw 0 5vw;
-	width:60vw;
-	float:right;
-	margin-bottom:3vw;
-		color:#888;
+	width:80vw;
 }
-
-
 .bk_xx p{
-	height:8vw;
-	line-height:8vw;
-}
-.bookname{
-	color:#f85050;
-	margin-bottom:3vw;
-}
-.bokxq .b_pic img{
-	width:100%;
-	height: 100%;	
-}
-
-.bookcon{
-	width:90vw;
 	color:#333;
-	line-height:6vw;
-	margin:0 auto;
-	display:block;
+	text-align: center;
+}
+.bookname,.bookleader{
+	font-size:3.8vw;
+}
+.b_xq{
+	width:80vw;
+	margin:2vw auto;
+}
+.b_xq p{
+	color:#a7a7a7;
 }
 .morebtn{
-	color:#1e996e;
+	color:#f83553;
 	float:right;
 	margin:0;
 
 }
+
+.u_ul{
+	width:36vw;
+	height:7vw;
+	margin:0 auto;
+	margin-top:8vw;
+	overflow:hidden;
+	border:1px solid #f83553;
+	border-radius:2vw;
+	-webkit-border-radius:2vw;
+	-o-border-radius:2vw;
+	-moz-border-radius:2vw;
+}
+.u_ul p{
+	width:18vw;
+	height:8vw;
+	float:left;
+	color:#a7a7a7;
+	line-height: 8vw;
+	text-align:center;
+	font-size:3.4vw;
+}
+.u_ul p.att{
+	color:#fff;
+	background: #f83553;
+}
 .position{
-	margin-top:4vw;
-	padding:3vw 0;
-	background: #fff;
+	width:80vw;
+	margin:5vw auto;
+	color:#a7a7a7;
 }
 .position p{
-	width:75vw;
-	margin:0 auto;
-	height:10vw;
-	line-height:10vw;
-	font-size:3.6vw;
+	color:#a7a7a7;
+	width:100%;
+	border-bottom: 1px solid #f3f1f1;
+	line-height:6vw;
+	padding-top: 2vw;
 }
-.position .address{
-	width:75vw;
-	margin:0 auto;
-	height:10vw;
-	line-height:10vw;
-	font-size:3.6vw;
+.address{
+	width:80vw;
+	// height:6vw;
 	overflow:hidden;
-}
-.score{
-	font-size:3vw;
-	line-height:8vw;
-}
-.star span{
-	color:#888;
-	font-size:3.6vw;
+	line-height:6vw;
+	border-bottom: 1px solid #f3f1f1;
 }
 .address .opt{
-	float:left;
-	width:15vw;
 	display:block;
-	padding-bottom:5000px;
-	margin-bottom:-5000px;
+	padding-top:2vw;
+
+	width:20vw;
+
+	float:left;
 }
-.address .sda{
-	 float:right;
-	 width:56vw;
+.sda{
+		width:60vw;
+		float:left;
+	
 }
+.sda p{
+
+	border-bottom:none;
+}
+
+
 .Btn{
-	width:50vw;
-	height:10vw;
-	line-height:10vw;
-	background: #f85050;
+	width:30vw;
+	height:8vw;
+	line-height:8vw;
+	background: -webkit-linear-gradient(left, #fba094 , #f8647a);
+    background: -o-linear-gradient(right, #fba094, #f8647a);
+    background: -moz-linear-gradient(right, #fba094, #f8647a);
+    background: linear-gradient(to right, #fba094 , #f8647a);
 	margin:8vw auto;
 	text-align:center;
 	border-radius: 7vw;
@@ -143,20 +161,12 @@ body{
 	font-size:4.8vw;
 	display:block;
 }
-
-
-.alert{
-	padding:2vw 4vw;
-	background: rgba(0,0,0,.7);
-	border-radius: 1vw;
-	-webkit-border-radius: 1vw;
-	-o-border-radius: 1vw;
-	-moz-border-radius: 1vw;
-	color:#fff;
-	position: fixed;
-	top:15vw;
-	right:5vw;
-    z-index:1;
-	
-
+.pos2{
+	position:relative;
+}
+.pos2 p.kong{
+	width:80vw;
+	color:#ebe7e7;
+	text-align:center;
+	border:none;
 }

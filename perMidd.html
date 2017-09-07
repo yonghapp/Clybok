@@ -35,46 +35,34 @@
 <div class="Per_con">
 	<div class="top">
 				<span><a href="javascript:history.go(-1)"></a></span>
-				<p>借 阅</p>
+				<p>个人中心</p>
 			</div>
 	<div class="per_top">
 		<a href=""><p class="border_none">头像<span class="per_mr"><i class="fa fa-angle-right" aria-hidden="true"></i></span><span class="per_pic"><img v-bind:src="perPic" alt=""></span></p></a>
 
-		<a href=""><p>名字<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg">{{pername}}</span></p></a>
-		<a href=""><p>借书证<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg">{{pernum}}</span></p></a>
-		<a href=""><p>身份证<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg">{{perN}}</span></p></a>
-		<a href=""><p>邮寄地址<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg">{{peraddr}}</span></p></a>
+		<a href=""><p>名字<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="pername"></span></p></a>
+		<a href=""><p>借书证<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="pernum"></span></p></a>
+		<a href=""><p>身份证<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="perN"></span></p></a>
+		<a href=""><p>邮寄地址<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="peraddr"></span></p></a>
 	</div>
 	<div class="per_mid">
-		<a href=""><p>地区<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg">{{perQ}}</span></p></a>
-		<a href=""><p>个性签名<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg">{{perTXT}}</span></p></a>
+		<a href=""><p>地区<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="perQ"></span></p></a>
+		<a href=""><p>个性签名<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="perTXT"></span></p></a>
 	</div>
 
 	<div class="btn">
 	   <button id="btn" @click="open()"><a v-bind:href="message">退出登录</a></button>
 	</div>
 </div>
+<script type="text/javascript" src="js/json.js"></script>
 <script type="text/javascript">
-let data={
-	perPic:'images/head.jpg',
-	pername:'欣儿',
-	pernum:'159****5264',
-	perN:'1308******4106',
-	peraddr:'北京市朝阳区广渠路66号',
-	perQ:'北京 北京',
-	perTXT:'人丑就应该多读书',
-	message:''
-
-
-}
-
 new Vue({
 	el:".Per_con",
 	data:data,
 	methods:{
 		open:function(){
 
-					this.message="index.html"		
+			this.message="index.html"		
 		}
 	}
 })

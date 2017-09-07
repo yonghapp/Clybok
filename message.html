@@ -86,79 +86,32 @@
 	</div>
 
 	<script type="text/javascript">
-
-	$(function(){
-	for(var i=0;i< $(".m_at").length;i++){
-			if($(".m_at").eq(i).text()=="借"){
-				$(".m_at").eq(i).css("color","#333")
+		$(function(){
+		for(var i=0;i< $(".m_at").length;i++){
+				if($(".m_at").eq(i).text()=="借"){
+					$(".m_at").eq(i).css("color","#333")
+					}
+				if($(".m_at").eq(i).text()=="还"){
+					$(".m_at").eq(i).css("color","#0ac75f")
+					}
+				if($(".m_at").eq(i).text()=="逾"){
+					$(".m_at").eq(i).css("color","#e6404b")
+					$(".mb_r").eq(i).css("color","#e6404b")
+					}
 				}
-			if($(".m_at").eq(i).text()=="还"){
-				$(".m_at").eq(i).css("color","#0ac75f")
-				}
-			if($(".m_at").eq(i).text()=="逾"){
-				$(".m_at").eq(i).css("color","#e6404b")
-				$(".mb_r").eq(i).css("color","#e6404b")
-				}
-			}
-		})
-	let data={
-		allbook:"3",
-		hbook:'3',
-		aljbook:'65',
-		ytim:'1',
-		Booktts:[
-			{
-				Boktxt:'借',
-				Boktime:"您于2017-4-23"	,
-				Boknum:"借书 3 本",
-				Bok1:"最后的精灵",
-				Bok2:"皮囊",
-				Bok3:"魔鬼聊天术",
-				Bokhtim:"2017-6-17",
-				Bokmy:"(还期未到)"
-			},
-			{
-				Boktxt:'还',
-				Boktime:"您于2017-4-23"	,
-				Boknum:"还书 3 本",
-				Bok1:"最后的精灵",
-				Bok2:"皮囊",
-				Bok3:"魔鬼聊天术",
-				Bokhtim:"2017-6-17",
-				Bokmy:"(逾期归还)"
-			},
-			{
-				Boktxt:'逾',
-				Boktime:"您还有 3 本书刊需要归还",
-				Bok1:"最后的精灵",
-				Bok2:"皮囊",
-				Bok3:"魔鬼聊天术",
-				Bokhtim:"2017-6-17",
-				Bokmy:"(逾期未还)"
-			},
-			{
-				Boktxt:'逾',
-				Boktime:"您还有 3 本书刊需要归还",
-				Bok1:"最后的精灵",
-				Bok2:"皮囊",
-				Bok3:"魔鬼聊天术",
-				Bokhtim:"2017-6-17",
-				Bokmy:"(逾期未还)"
-			}
-
-		]
-
-	}
-
-	new Vue({
-		el:".b_con",
-		data:data,
-		methods:{
-
-		}
-
-	})
+			})
 
 	</script>
+	<script type="text/javascript" src="js/json.js"></script>	
+	<script type="text/javascript">
+		new Vue({
+				el:".b_con",
+				data:data,
+				methods:{
+
+				}
+
+			})
+	</script>	
 </body>
 </html>
