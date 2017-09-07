@@ -22,55 +22,69 @@
 				<span><a href="javascript:history.go(-1)"></a></span>
 				<p>借 阅</p>
 			</div>
-			<p class="bk_tit bk_tit1">书本详情</p>
-			<div class="bokxq">
-				
-				<div class="b_pic"><img v-bind:src="bookxq.bokpic" alt=""></div>
-				<div class="b_con">
-					<p class="bookname">{{bookxq.bokname}}</p>
-					<p class="bookleader">{{bookxq.leadr}}</p>
-					<p class="bookfrom">出版社: {{bookxq.from}} {{bookxq.time}}</p>
-				</div>
-				
-			</div>
-			<p class="bk_tit">借 阅 详 情</p>
-			<div class="position">
-				<div class="pb_con">
-					<p>书本状态: <span class="sta">{{bookxq.state}}</span></p>
-					<p>借阅时间: <span class="j_time"></span></p>
-					<p>还书时间: <span class="y_time"><input type="text" name="USER_AGE" id="USER_AGE" readonly class="input" placeholder="请填写还书时间" /><i class="fa fa-pencil-square-o"></i></span></p>
-				</div>
-				
-			</div>
 
-			<p class="qian"><input type="checkbox" id="charset" checked="checked"><label  >我已阅读 <span id="clace" ><<借阅条款>></span></label></p>
-			<div class="Btn"><a href="">确 认 借 阅</a></div>
-	</div>
-		<div class="wrap none">
-			<div class="outer-container">
-				<div class="cale">
-					<div class="cla_con">
-						<p class="cla_tit">图书借阅制度</p>
-						<div class="cla_txt">
-							<p>1、经本人申请可办理借书卡，凭借书证（卡）借书。</p>
-							<p>2、借书证限本人使用，每次可借1-3本图书，借期不超过10天。到期未看完者，须办理续借手续。</p>
-							<p>3、专业书或专业参考书，借期四个月，到期全部归还。</p>
-							<p>4、工具书和善本书一律不外借，只限在资料室内查阅。</p>
-							<p>5、读者要爱护图书，不得污损、撕毁、批注和丢失，如有上述情况应按制度赔偿。对于违章的读者，在未办妥有关赔偿手续前，暂停其借阅权利。</p>
-							<p>6、借书证限本人或专人使用，应妥善保管，如发生代借、冒借等现象，概由领证人负责。借书证和借书卡丢失，应立即到图书馆挂失，图书馆（室）将集中办理补发手续。</p>
-							<p>7、书刊遗失，尽量购买原版本图书赔偿，否则以书刊价格的1～20倍赔偿。图书馆（室）将所有罚款与赔书款，全部纳入购书经费。</p>
+		<div class="windw">
+			<div class="wincon">
+				<div class="Allcon">
+					<p class="bk_tit bk_tit1">书本详情</p>
+					<div class="bokxq">
+						
+						<div class="b_pic"><img v-bind:src="bookxq.bokpic" alt=""></div>
+						<div class="b_con">
+							<p class="bookname">{{bookxq.bokname}}</p>
+							<p class="bookleader">{{bookxq.leadr}}</p>
+							<p class="bookfrom">出版社: {{bookxq.from}}</p>
 						</div>
+						
+					</div>
+					<p class="bk_tit">借 阅 详 情</p>
+					<div class="position">
+						<div class="pb_con">
+							<p>书本状态: <span class="sta">{{bookxq.state}}</span></p>
+							<p>借阅时间: <span class="j_time"></span></p>
+							<p>还书时间: <span class="y_time"><input type="text" name="USER_AGE" id="USER_AGE" readonly class="input" placeholder="请填写还书时间" /><i class="fa fa-pencil-square-o"></i></span></p>
+						</div>
+						
+					</div>
+
+					<p class="qian"><input type="checkbox" id="charset" checked="checked"><label  >我已阅读 <span id="clace" ><<借阅条款>></span></label></p>
+					<div class="Btn"><a href="">确 认 借 阅</a></div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="wrap none">
+		<div class="outer-container">
+			<div class="cale">
+				<div class="cla_con">
+					<p class="cla_tit">图书借阅制度</p>
+					<div class="cla_txt">
+						<p>1、经本人申请可办理借书卡，凭借书证（卡）借书。</p>
+						<p>2、借书证限本人使用，每次可借1-3本图书，借期不超过10天。到期未看完者，须办理续借手续。</p>
+						<p>3、专业书或专业参考书，借期四个月，到期全部归还。</p>
+						<p>4、工具书和善本书一律不外借，只限在资料室内查阅。</p>
+						<p>5、读者要爱护图书，不得污损、撕毁、批注和丢失，如有上述情况应按制度赔偿。对于违章的读者，在未办妥有关赔偿手续前，暂停其借阅权利。</p>
+						<p>6、借书证限本人或专人使用，应妥善保管，如发生代借、冒借等现象，概由领证人负责。借书证和借书卡丢失，应立即到图书馆挂失，图书馆（室）将集中办理补发手续。</p>
+						<p>7、书刊遗失，尽量购买原版本图书赔偿，否则以书刊价格的1～20倍赔偿。图书馆（室）将所有罚款与赔书款，全部纳入购书经费。</p>
 					</div>
 				</div>
-				<span class="close">×</span>
 			</div>
+			<span class="close">×</span>
 		</div>
+	</div>
 		
 	<script src="js/mobiscroll.core-2.5.2.js"></script> 
     <script src="js/mobiscroll.datetime-2.5.1.js"></script>
 	<script type="text/javascript">
 		// 借阅时间
 		$(function(){
+
+			let Height=$(window).height();
+			let DelH=$(".top").height()+40
+
+			$(".windw").css("height",Height-DelH+"px");
+			$(".wincon").css("height",Height-DelH+"px");
+
 			let date=new Date();
 			let year=date.getFullYear();
 			let month=date.getMonth()+1;

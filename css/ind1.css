@@ -92,6 +92,7 @@ body{
 }
 .Imput span:first-child{
 	float:left;
+	top:.5vw;
 }
 .Imput span:last-child{
 	float:right;

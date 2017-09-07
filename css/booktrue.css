@@ -2,24 +2,55 @@
 body{
 	background: #f3f1f1;
 }
-.bk_tit1{
-	margin-top:13vw;
+.windw{
+	width:90vw;
+	margin:3vw auto;
+	overflow: hidden;
+	background: #fff;
+	margin-top:16vw;
+	box-shadow: 0 4px 1px 1px #efb0b9;
+	border-radius:3vw;
+	-webkit-border-radius:3vw;
+	-o-border-radius:3vw;
+	-moz-border-radius:3vw;
+	position:relative;
 }
+.wincon{
+	width: 100vw;
+	overflow-y: auto;
+}
+.Allcon::-webkit-scrollbar {
+	display: none;
+}
+
+.Allcon{
+	width:90vw;
+	background: #fff;
+}
+
 .bokxq{
-	width:95vw;
-	margin:0 auto;
+	width:80vw;
+	margin:5vw auto;
+	padding-bottom:5vw;
 	overflow:hidden;
-	padding:3vw 0;
-	
+	border-bottom:1px solid #f3f1f1;	
 }
 .bk_tit{
 	text-align:center;
-	height:10vw;
-	line-height:10vw;
+	width:25vw;
+	height:8vw;
+	margin:0 auto;
+	line-height:8vw;
 	font-size:4vw;
 	color:#656565;
-	background: #fff;
-	border:1px solid #f3f1f1;
+	border:1px solid #f83553;
+	border-radius:2vw;
+	-webkit-border-radius:2vw;
+	-o-border-radius:2vw;
+	-moz-border-radius:2vw;
+}
+.bk_tit1{
+	margin-top:8vw;
 }
 .bokxq .b_pic{
 	width:20vw;
@@ -33,6 +64,7 @@ body{
 }
 .b_con{
 	float:left;
+	width:50vw;
 	padding:1vw 0;
 	color:#656565;
 }
@@ -47,13 +79,15 @@ body{
 .position{
 	width:80vw;
 	margin:0 auto;
-	margin-bottom: 10vw;
-	padding:3vw 0;
+	margin-top:5vw;
+
 }
 .pb_con p{
-	height:10vw;
-	line-height:10vw;
+	height:6vw;
+	line-height:6vw;
+	padding-top:2vw;
 	color:#656565;
+	border-bottom:1px solid #f3f1f1;
 }
 .pb_con p span{
 	margin-left: 5vw;
@@ -65,7 +99,7 @@ body{
 .pb_con p .sta{
 	
 	font-size:3.6vw;
-	color:#1e996e;
+	color:#656565;
 
 }
 .pb_con p span.y_time{
@@ -73,21 +107,23 @@ body{
 	color:#f85050;
 	font-size:4vw;
 }
-.pb_con p span.y_time i{
-	position:absolute;
-	top:0.5vw;
-	right: 1vw;
-	z-index: -1;
-}
+
 .pb_con p span input{
 	width:35vw;
 	border:none;
 	background: transparent;
+	position:relative;
+	z-index:1;
+}
+.pb_con p span.y_time i{
+	position:absolute;
+	bottom:0;
+	right: 1vw;
 }
 .qian{
-	width:83vw;
+	width:73vw;
 	padding-left:7vw;
-	margin:3vw auto;
+	margin:2vw auto;
 	height:8vw;
 	line-height:8vw;
 	position:relative;
@@ -103,15 +139,18 @@ body{
 }
 .qian #clace{
 	display:inline-block; 
-	color:#f36610;
+	color:#f83553;
 }
 .Btn{
-	width:50vw;
+	width:40vw;
 	height:10vw;
 	line-height:10vw;
-	background: #f85050;
+	background: -webkit-linear-gradient(left, #fba094 , #f8647a);
+    background: -o-linear-gradient(right, #fba094, #f8647a);
+    background: -moz-linear-gradient(right, #fba094, #f8647a);
+    background: linear-gradient(to right, #fba094 , #f8647a);
 	margin:0 auto;
-	margin-bottom:4vw;
+	margin-top:8vw;
 	text-align:center;
 	border-radius: 7vw;
 	-webkit-border-radius: 7vw;

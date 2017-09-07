@@ -15,28 +15,23 @@ body{
 	overflow: hidden;
 	padding-top: 5px;
 }
-.outer-container,.content{
-	width:24.7vw;
-}
+
 .outer-container{
-	position: relative;
- 	overflow: hidden;
- 	float:left;
+	width:24.7vw;
+	overflow: hidden;
+	float:left;
 }
 
 .inner-container{
-	position: absolute; 
-	left: 0;
-	top:0;
-	overflow-x: hidden;
-	overflow-y: scroll;
+    width: 30vw;
+	overflow-y: auto;
 
 }
-.inner-container::-webkit-scrollbar {
+.content::-webkit-scrollbar {
 		    display: none;
 }
 
- .cuter-container{
+.cuter-container{
 	width: 75.3vw;
 	overflow: hidden;
 	background: #fff;
