@@ -38,23 +38,71 @@
 				<p>个人中心</p>
 			</div>
 	<div class="per_top">
-		<a href=""><p class="border_none">头像<span class="per_mr"><i class="fa fa-angle-right" aria-hidden="true"></i></span><span class="per_pic"><img v-bind:src="perPic" alt=""></span></p></a>
+		<p class="border_none">头像<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_pic"><img v-bind:src="perPic" alt=""></span></p>
 
-		<a href=""><p>名字<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="pername"></span></p></a>
-		<a href=""><p>借书证<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="pernum"></span></p></a>
-		<a href=""><p>身份证<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="perN"></span></p></a>
-		<a href=""><p>邮寄地址<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="peraddr"></span></p></a>
+		<p>名字<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="pername"></span></p>
+		<p>借书证<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="pernum"></span></p>
+		<p>身份证<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="perN"></span></p>
+		<p>邮寄地址<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="peraddr"></span></p>
 	</div>
 	<div class="per_mid">
-		<a href=""><p>地区<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="perQ"></span></p></a>
-		<a href=""><p>个性签名<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="perTXT"></span></p></a>
+		<p>地区<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="perQ"></span></p>
+		<p>个性签名<span class="per_mr"><i class="fa fa-angle-right"></i></span><span class="per_mesg" v-text="perTXT"></span></p>
 	</div>
 
 	<div class="btn">
 	   <button id="btn" @click="open()"><a v-bind:href="message">退出登录</a></button>
 	</div>
+
+	<div class="huan none">
+		<p><input type="file">从相册中选取图片</p>
+		<p><input type="button">拍照</p>
+		<p class="Clear">取消</p>
+
+	</div>
 </div>
+<div class="wrap none"></div>
 <script type="text/javascript" src="js/json.js"></script>
+<script type="text/javascript">
+
+$(function(){
+
+	$(".wrap").css({
+		"z-index":"10",
+	     "display":"none",
+	     "position": "fixed",
+	     "top": "0",
+	     "left": "0",
+	     "width":$(window).width()+"px",
+	     "height":$(window).height()+"px",
+	     "background-color":"rgba(0,0,0,0.7)"
+	})
+
+	$(".per_top .border_none").click(function(){
+		$(".huan").slideDown()
+		$(".wrap").show()
+	})
+	$(".wrap").click(function(){
+		$(".huan").slideUp()
+		$(".wrap").hide()
+	})
+
+	$(".Clear").click(function(){
+		$(".huan").slideUp()
+		$(".wrap").hide()
+	})
+
+
+
+
+})
+	
+
+
+</script>
+
+
+
 <script type="text/javascript">
 new Vue({
 	el:".Per_con",
