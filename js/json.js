@@ -24,6 +24,7 @@ let data={
 	hbook:'3', //需还书刊
 	aljbook:'65',//您已累计借书
 	ytim:'1',// 逾期次数记录
+
 	//  借书消息
 	Booktts:[
 		{
@@ -507,5 +508,69 @@ let data={
 			n_shc:"324",
 			n_share:"553"
 		},
-	]
+	],
+
+	// 借阅历史
+	Historys:[
+			{
+				borrow:'2017-4-5',
+				still:'2017-8-16',
+				allNum:'3',
+				boklist:[
+					{
+						title:"别走，我的青春年少",
+						state:'续借',
+						tim:'逾期',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5717746.jpg',
+					},
+					{
+						title:"首都周围的八大集团军",		
+						state:'续借',
+						tim:'未到',
+						icon:'http://103.235.234.147:6788/bookimg/I253.2614.jpg',
+					},
+					
+					{
+						title:"蔷薇盛开过夏天",
+						state:'续借',
+						tim:'已还',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5716289.jpg',
+					},
+				]
+			},
+			{
+				borrow:'2017-4-5',
+				still:'2017-8-16',
+				allNum:'4',
+				boklist:[
+					{
+						title:"别走，我的青春年少",
+						state:'续借',
+						tim:'逾期',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5717746.jpg',
+					},
+					{
+						title:"首都周围的八大集团军",		
+						state:'续借',
+						tim:'未到',
+						icon:'http://103.235.234.147:6788/bookimg/I253.2614.jpg',
+					},
+					{
+						title:"那个夏季那个秋天",	
+						state:'续借',
+						tim:'未到',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5715906.jpg',
+					},
+					{
+						title:"蔷薇盛开过夏天",
+						state:'续借',
+						tim:'已还',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5716289.jpg',
+					},
+				]
+			},
+
+
+	],
+
 }

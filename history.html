@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>借阅历史</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/history.css">
+	<link rel="stylesheet" href="css/top.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div class="h_con">
+
+		<div class="top">
+			<span><a href="javascript:history.go(-1)"></a></span>
+			<p>借阅历史</p>
+			<span class="shouc"><a href="Sou_lit.html"></a></span>
+		</div>
+
+	<div class="bkn_con">
+			<div class="bkn" v-for="item in Historys">
+				<div class="bkn_top">
+					<div class="bkt_l">
+						<p>借阅日 : {{item.borrow}}</p>
+						<p>归还日 : {{item.still}}</p>
+					</div>
+					<div class="bkt_r">
+						{{item.allNum}}本
+					</div>
+				</div>
+				<div class="bkn_c">
+					<ul>
+						<li v-for="book in item.boklist">
+							<div class="bk_pic">
+								<img v-bind:src="book.icon" alt="">
+								<span class="tim_tt">{{book.tim}}</span>
+								<span class="tim"></span>
+							</div>
+							<p class="bok_name">{{book.title}}</p>
+							<p class="xjie"><a href="">{{book.state}}</a></p>
+						</li>
+					</ul>
+
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		for(var i=0; i<$(".tim_tt").length;i++){
+			if($(".tim_tt").eq(i).text()=="逾期"){
+				$(".tim_tt").eq(i).next("span").addClass("tim1")	
+			}
+			if($(".tim_tt").eq(i).text()=="未到"){
+				$(".tim_tt").eq(i).next("span").addClass("tim2")
+				$(".tim_tt").eq(i).parent(".bk_pic").parent("li").find(".xjie").addClass("jie");
+				
+
+			}
+			if($(".tim_tt").eq(i).text()=="已还"){
+				$(".tim_tt").eq(i).next("span").addClass("tim3")	
+			}
+		}
+
+		// 每次借阅的 书本数量
+		(function(){
+			for(var i=0;i<data.Historys.length;i++){	
+				data.Historys[i].allNum=data.Historys[i].boklist.length
+			}	
+		})()
+		
+		
+
+	})
+
+
+
+
+	</script>
+	<!-- <script type="text/javascript" src="js/json.js"></script> -->
+	<script type="text/javascript">
+
+	let data={
+		Historys:[
+			{
+				borrow:'2017-4-5',
+				still:'2017-8-16',
+				allNum:'',
+				boklist:[
+					{
+						title:"别走，我的青春年少",
+						state:'续借',
+						tim:'逾期',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5717746.jpg',
+					},
+					{
+						title:"首都周围的八大集团军",		
+						state:'续借',
+						tim:'未到',
+						icon:'http://103.235.234.147:6788/bookimg/I253.2614.jpg',
+					},
+					
+					{
+						title:"蔷薇盛开过夏天",
+						state:'续借',
+						tim:'已还',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5716289.jpg',
+					},
+				]
+			},
+			{
+				borrow:'2017-4-5',
+				still:'2017-8-16',
+				allNum:'',
+				boklist:[
+					{
+						title:"别走，我的青春年少",
+						state:'续借',
+						tim:'逾期',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5717746.jpg',
+					},
+					{
+						title:"首都周围的八大集团军",		
+						state:'续借',
+						tim:'未到',
+						icon:'http://103.235.234.147:6788/bookimg/I253.2614.jpg',
+					},
+					{
+						title:"那个夏季那个秋天",	
+						state:'续借',
+						tim:'未到',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5715906.jpg',
+					},
+					{
+						title:"蔷薇盛开过夏天",
+						state:'续借',
+						tim:'已还',
+						icon:'http://103.235.234.147:6788/bookimg/I247.5716289.jpg',
+					},
+				]
+			},
+
+
+	],
+
+	}
+	
+		new Vue({
+			el:".h_con",
+			data:data,
+			methods:{
+				
+				
+			}
+		})
+
+	</script>
+</body>
+</html>

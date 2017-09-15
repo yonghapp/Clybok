@@ -34,14 +34,153 @@
 				<p class="n_bum">
 				    <span class="n_eye"><i></i>{{item.n_eye}}</span>
 					<span class="n_shc"><i></i>{{item.n_shc}}</span>
-					<span class="n_share"><i></i>{{item.n_share}}</span>
+					<span class="n_share"><i class="share"></i>{{item.n_share}}</span>
 				</p>
 			</li>
 		</ul>
 	</div>
 
 
+	<div class="kePublic none">
+		<!--效果html开始-->
+		<style type="text/css">
+			.kePublic{
+				width: 100%;
+				height: auto;
+				overflow: hidden;
+				position: fixed;
+				left:0;
+				bottom: 0;
+				background: #fff;
+				z-index: 1000;
+			}
+			.gb_resLay{
+				background:#f2f2f2;
+				padding:2vw 0;
+			}
+			.gb_res_t{
+				width: 95vw;
+				margin:0 auto;
+				line-height: 8vw;
+				text-align: center;
+				font-size: 3.6vw;
+				position: relative;
+			}
+			.gb_res_t span {
+			    background: #f2f2f2;
+			    display: inline-block;
+			    padding: 0px 2vw;
+			    position: relative;
+			    z-index: 2;
+			}
+			.gb_res_t i{
+				background: #FFEC94;
+			    height: 1px;
+			    overflow: hidden;
+			    left: 0;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    margin: auto;
+			    position: absolute;
+			}
+			.bdsharebuttonbox{
+				width: 90vw;
+				overflow: hidden;
+				margin:0 auto;
+			}
+			.bdsharebuttonbox ul li{
+				float: left;
+				width: 20vw;
+				margin: 0 5vw;
+				text-align: center;
+			}
+			.Clear{
+			    width: 100%;
+			    height: 13vw;
+			    position: relative;
+			    line-height: 13vw;
+			    text-align: center;
+			    background: #fff;
+			    font-size: 5vw;
+			    border-top: 1px solid #d6d3d3;
+			}
 
+
+
+.bdsharebuttonbox a { width: 20vw !important; height: 20vw !important; margin: 0 auto 1vw!important; float: none!important; padding: 0!important; display: block; }
+.bdsharebuttonbox .bds_tsina { background: url(images/newxq/wb.png) no-repeat center center/15vw 15vw; }
+.bdsharebuttonbox .bds_qzone { background: url(images/newxq/qzon.png) no-repeat center center/15vw 15vw; }
+.bdsharebuttonbox .bds_tqq { background: url(images/newxq/tx.png) no-repeat center center/15vw 15vw; }
+.bdsharebuttonbox .bds_weixin { background: url(images/newxq/weixin.png) no-repeat center center/15vw 15vw; }
+.bdsharebuttonbox .bds_sqq { background: url(images/newxq/qq.png) no-repeat center center/15vw 15vw; }
+.bdsharebuttonbox .bds_renren { background: url(images/newxq/renr.png) no-repeat center center/15vw 15vw; }
+/*.bd_weixin_popup .bd_weixin_popup_foot { position: relative; top: 0px; }*/
+/*.bd_weixin_popup{
+	display: none;
+}*/
+
+
+
+		</style>
+
+		<div class="gb_resLay">
+			<div class="gb_res_t"><span>分享到</span><i></i></div>
+			<div class="bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1505442175033">
+				<ul class="gb_resItms">
+					<li> <a title="分享到微信" href="#" class="bds_weixin"></a>微信好友 </li>
+					<li> <a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a>QQ好友 </li>
+					<li> <a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a>QQ空间 </li>
+					<li> <a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a>腾讯微博 </li>
+					<li> <a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>新浪微博 </li>
+					<li> <a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a>人人网 </li>
+				</ul>
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+		//全局变量，动态的文章ID
+		var ShareURL = "";
+		//绑定所有分享按钮所在A标签的鼠标移入事件，从而获取动态ID
+		$(function () {
+			$(".bdsharebuttonbox a").mouseover(function () {
+				ShareURL = $(this).attr("data-url");
+			});
+		});
+
+		/* 
+		* 动态设置百度分享URL的函数,具体参数
+		* cmd为分享目标id,此id指的是插件中分析按钮的ID
+		*，我们自己的文章ID要通过全局变量获取
+		* config为当前设置，返回值为更新后的设置。
+		*/
+		function SetShareUrl(cmd, config) {            
+			if (ShareURL) {
+				config.bdUrl = ShareURL;    
+			}
+			return config;
+		}
+
+		//插件的配置部分，注意要记得设置onBeforeClick事件，主要用于获取动态的文章ID
+		window._bd_share_config = {
+			"common": {
+				onBeforeClick: SetShareUrl, "bdSnsKey": {}, "bdText": "朝阳区图书馆"
+				, "bdMini": "2", "bdMiniList": true, "bdPic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505457846684&di=dedeba42bbc241eaec8dda769f58f735&imgtype=0&src=http%3A%2F%2Fs2.sinaimg.cn%2Fmiddle%2F4d5a923btbb1b30557fc1%26690", "bdStyle": "0", "bdSize": "24"
+			}, "share": {}
+		};
+		//插件的JS加载部分
+		with (document) 0[(getElementsByTagName('head')[0] || body)
+			.appendChild(createElement('script'))
+			.src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=839466683.js?cdnversion='
+			+ ~(-new Date() / 36e5)];
+		</script> 
+		<!--效果html结束-->
+
+
+
+		<p class="Clear">取消</p>
+</div>
 	<div class="foot">
 		<ul>
 			<li class="act"><a href="ind1.html">
@@ -66,8 +205,23 @@
 			</a></li>
 		</ul>
 	</div>
+	<div class="wrap none"></div>
 	<script type="text/javascript">
 		$(function(){
+			$(".wrap").css({
+				"z-index":"999",
+			     "display":"none",
+			     "position": "fixed",
+			     "top": "0",
+			     "left": "0",
+			     "width":$(window).width()+"px",
+			     "height":$(window).height()+"px",
+			     "background-color":"rgba(0,0,0,0.7)"
+			})
+
+
+
+
 		$(document).on("scroll",function(){
 			var B_top=$(".top").height();
 		    var top_t=$(".top_tit");
@@ -101,11 +255,22 @@
 			})
 		})
 		$(".n_share i").click(function(){
+			$(".kePublic").slideDown("fast")
+			$(".wrap").show()
 			$(this).css({
 				"background":"url(images/newxq/33.png) center center no-repeat",
 				"background-size":"100%"
 			})
-		})    
+		}) 
+		$(".wrap").click(function(){
+			$(".kePublic").slideUp("fast")
+			$(".wrap").hide()
+		})
+
+	$(".Clear").click(function(){
+			$(".kePublic").slideUp("fast")
+			$(".wrap").hide()
+		})   
 	})
 
 
