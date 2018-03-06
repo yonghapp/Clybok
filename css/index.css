@@ -169,3 +169,30 @@ body{
 	background-position:center;
 	background-repeat: no-repeat;
 }
+.succes{
+    position:fixed;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin:auto;
+    text-align:center;
+    line-height:40px;
+    color:#555;
+    font-size:12px;
+    border-radius:5px;
+	width:150px;
+	height:80px;
+	background: rgba(255,255,255,0.7);
+
+}
+.succes .loadn{
+	width:20px;
+	height:20px;
+	display:block;
+	margin:0 auto;
+}
+.succes .loadn img{
+	width:100%;
+	height:100%;
+}

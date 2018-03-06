@@ -71,24 +71,48 @@
 
 					</div>
 					
-					<div class="Btn"><a href="booktrue.html">借 阅</a></div>
+					<div class="Btn">
+
+					     <div class="jie"><a href="booktrue.html">借 阅</a></div>
+					     <div class="bokcar"><a class="action" href="javascript:void(0);"> 加入书 车</a></div>
+
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	 <div id="ajaxLoad" class="showLoad">
+		<div class="loadAll">
+		加入成功</div>
+		<img src="images/duihao.png" alt="">
 	</div>
 	<script type="text/javascript">
 	$(function(){
 		let Height=$(window).height();
 		let DelH=$(".top").height()+40
-
 		$(".windw").css("height",Height-DelH+"px");
 		$(".wincon").css("height",Height-DelH+"px");
-
 		$(".u_ul p").click(function(){
 			$(this).addClass("att").siblings().removeClass("att")
 			let num=$(this).index();
 			$(".c_con .position").eq(num).removeClass("none").siblings().addClass("none")
 		})
+		//加入书车
+		$(".action").click(function () {
+		startWaiting();
+		setTimeout(function () {
+		endWaiting();
+		}, 3000);
+		});
+ //开始加载
+ function startWaiting() {
+  $(".showLoad").stop(true).animate({ 'margin-top': '300px', 'opacity': '1' }, 200);
+ }
+ //结束加载
+ function endWaiting() {
+  $(".showLoad").stop(true).animate({ 'margin-top': '250px', 'opacity': '0' }, 400);
+
+ }
 
 		//收藏
 		$(".shoucang").click(function(){

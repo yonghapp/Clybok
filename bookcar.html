@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的预借</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/bookcar.css">
+	<link rel="stylesheet" href="css/appfoot.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+
+</head>
+<body>
+<div class="C_on">
+
+	
+	<div class="tab_con">
+		<div class="t_c">
+			<p  class="edit" >
+			<span v-on:click="allselet()" class="Over" v-show="allxun">全选</span>
+				<span class="del" v-on:click="Over()" v-show="show">完成</span>
+				<span v-on:click="edit()" class="del" v-show="hide">编辑</span>
+				
+			</p>
+			<p v-show="bokcar" style="text-align:center; font-size:4vw;color:#ccc;">书车里面空空如也......</p>
+			<div class="tc_con">
+				<ul>
+					<li class="book_car" v-for="(item, index) in Boookcars"><a href="">
+						<div class="s_pic">
+							<img v-bind:src="item.icon" alt="">
+							<input  class="selte"  v-model="item.isCheck" type="checkbox" value=""/>
+						</div>
+						<p class="s_tit">{{item.title}}</p></a>
+						
+					</li>
+				</ul>
+			</div>
+			<div class="deal" v-show="hide">
+				 <a href="bookxq.html" style="color:#fff;">我要约书</a>
+			</div>
+			<div v-on:click="Delat()" class="deal deals" v-show="show" id="deal" >
+				<span><i class="fa fa-trash-o"></i> </span>
+				 删除
+			</div>
+		</div>
+	</div>
+	
+	<div class="foot">
+		<ul>
+			<li><a href="ind1.html">
+				<div><i></i></div>
+				<p>首页</p>
+			</a></li>
+			<li><a href="message.html">
+				<div><i></i></div>
+				<p>消息</p>
+			</a></li>
+			<li><a href="addreslist.html">
+				<div><i></i></div>
+				<p>馆藏查询</p>
+			</a></li>
+			<li  class="act"><a href="bookcar.html"> 
+				<div><i></i></div>
+				<p>清单</p>
+			</a></li>
+			<li><a href="Person.html">
+				<div><i></i></div>
+				<p>我的</p>
+			</a></li>
+		</ul>
+
+	</div>
+</div>
+	<script type="text/javascript" src="js/json.js"></script>
+	<script type="text/javascript">
+	    new Vue({
+		el:".C_on",
+		data:data,
+		methods:{
+			del:function(n){
+				this.HotLists.splice(n,1)
+				// console.log(n)
+			},
+			edit:function(){
+				if(this.show==false){
+					this.show=true
+					this.detal=""
+					this.hide=false
+				
+					
+				}
+			},
+			allselet:function(event){
+
+	        this.Boookcars.forEach(item => {
+	            item.isCheck = true
+	        	})
+			},
+			Over:function(){
+				this.show=false
+				this.detal=""
+				this.hide=true
+	
+				for(let i=0;i<this.Boookcars.length;i++){
+
+					if(this.Boookcars[i].isCheck==true){
+						
+						this.Boookcars[i].isCheck=false
+
+					}
+				}
+			},
+			Delat:function(){
+
+				// this.show=false
+				// this.detal="编辑"
+				// this.hide=true
+
+				// 选中的 元素
+				for(let i=0;i<this.Boookcars.length;i++){
+
+					if(this.Boookcars[i].isCheck==true){
+						
+						this.arr.push(this.Boookcars[i])
+
+					}
+				}
+				for(let i=0;i<this.Boookcars.length;i++){
+					for(let j=0;j<this.arr.length;j++){
+							if(this.Boookcars[i]==this.arr[j]){
+								this.Boookcars.splice(i,1)
+							}
+						}
+					
+				}
+
+				if(this.Boookcars.length<=0){
+					this.show=false
+					this.hide=false
+			        this.allxun=false
+					this.bokcar=true
+					
+				}else{
+				  this.bokcar=false
+					if(this.arr.length<=0){
+					this.show=true
+					this.detal="全选"
+					this.hide=false
+		
+				}else{
+					this.show=false
+					this.detal="完成"
+					this.hide=true
+				
+				}
+				}
+			
+			},
+
+
+		}
+
+	})
+
+	</script>
+</body>
+</html>

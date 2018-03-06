@@ -115,11 +115,13 @@
 			color:#666;
 		}
 		.h_list a{
-			padding: 1.5vw 2.5vw;
+			padding: 2px 8px;
 			background:#f3f1f1;
 			margin: 2vw;
-			font-size: 3.6vw;
-			border-radius: 3vw;
+			line-height: 6vw;
+			font-size: 3.2vw;
+			border-radius: 2vw;
+			display: inline-block;
 		}
 		.Alert{
 			width: 70vw;
@@ -163,7 +165,18 @@
 			margin-left: 0;
 			background: #f44735;
 		}
-		
+
+		.I_r{
+			position: relative;
+
+		}
+		.I_r input{
+			opacity: 0;
+			position: absolute;
+			top:0;
+			left:0;
+			margin:0;
+		}
     </style>
 </head>
 <body>
@@ -171,8 +184,8 @@
 		<div class="S_input">
 			<span class="S_left"><a href="javascript:history.go(-1)"><i class="fa fa-angle-left"></i></a></span>
 				<div class="Imput">
-					<input type="text" placeholder="请输入书名、作者、关键词" id="input" v-model="book">
-					<span><i class="fa fa-camera-retro" class="I_r"></i></span>
+					<input type="text" placeholder="请输入书名、作者、关键词" id="input" autofocus  v-model="book">
+					<span class="I_r"><i class="fa fa-camera-retro" ></i><input type="file" value="拍照" capture="camera"></span>
 				</div>
 			<span class="S-right" v-on:click="Add()">搜索</span>
 		</div>

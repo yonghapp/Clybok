@@ -6,9 +6,10 @@ let data={
     pername:'camlie',     //用户名字
 	show:false,
 	hide:true,
-	f_hide:true,
+
 	bokcar:false,
-	// arr:[],   // 我的书车  存放 删除选中元素
+	allxun:true,
+	arr:[],   // 我的书车  存放 删除选中元素
 	newhisturys:[], // 存放 新的搜索
 	book:'',   //存放搜索新图书的名字 用于添加到newhisturys 中
 	booknum:'126',  //借阅历史
@@ -94,13 +95,16 @@ let data={
 			txt:"陈迹·清欢",
 		},
 		{
+			txt:"最后的精灵",
+		},
+		{
+			txt:"一个人的天光",
+		},
+		{
 			txt:"如果悲伤没有眼泪",
 		},
 		{
 			txt:"偏爱",
-		},
-		{
-			txt:"一个人的天光",
 		},
 		{
 			txt:'首都周围的八大集团军',
