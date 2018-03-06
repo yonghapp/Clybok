@@ -2,8 +2,9 @@
 html,body{
 	width: 100%;
 	height: 100%;
+	background:#524b3d;
 	position:relative;
-	z-index:0;
+	z-index:-1;
 
 }
 body{
@@ -171,18 +172,15 @@ body{
 }
 .succes{
     position:fixed;
-    top:0;
-    bottom: 0;
-    left:0;
-    right:0;
-    margin:auto;
+    top:30vh;
+    left:30vw;
     text-align:center;
-    line-height:40px;
+    line-height:10vh;
     color:#555;
     font-size:12px;
     border-radius:5px;
-	width:150px;
-	height:80px;
+	width:40vw;
+	height:10vh;
 	background: rgba(255,255,255,0.7);
 
 }
